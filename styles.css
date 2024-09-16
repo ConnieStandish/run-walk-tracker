@@ -1,0 +1,13 @@
+#map {
+    height: 650px;
+    width: 80%;
+}
+
+button {
+    margin: 10px 15px 0 0;
+}
+
+#saved-data {
+    font-family: sans-serif;
+    font-size: 1.1em;
+}
