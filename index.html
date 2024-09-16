@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link type="text/css" rel="stylesheet" href="styles.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <title>RunWalk Fitness Tracker</title>
 </head>
+
 <body>
-    
+    <div id="map"></div>
+
+    <div id="track-buttons">
+        <button onclick="start()">Start</button>
+        <button onclick="stop()"></button>
+    </div>
+
+    <div id="saved-data">
+        <p id="time"></p>
+        <p id="distance"></p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
