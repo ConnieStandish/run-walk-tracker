@@ -24,7 +24,7 @@ const options = {
 };
 
 function launch() {
-    modal.style.display = "block";
+    modal.style.visibility = "visible";
 }
 
 function start() {
@@ -45,17 +45,18 @@ function stop() {
     const time = (finishRun - startRun) / 1000;
     const timeMinutes = Math.floor(time / 60);
     const timeSeconds = Math.floor(time % 60);
-    document.getElementById("time").innerHTML = (timeMinutes + ' minutes and '  + timeSeconds + ' seconds');
+    // document.getElementById("time").innerHTML = (timeMinutes + ' minutes and '  + timeSeconds + ' seconds');
+    console.log(timeMinutes + ' mins' + timeSeconds + ' seconds')
 
     //Calculate Distance in Stop Function
    
-    let totalDistance = 0
+    // let totalDistance = 0
 
-    for (let i = 1; i < positions.length; i++) {
-        totalDistance += haversineDistance(positions[i - 1], positions[i])
-    } 
+    // for (let i = 1; i < positions.length; i++) {
+    //     totalDistance += haversineDistance(positions[i - 1], positions[i])
+    // } 
    
-    document.getElementById("distance").innerHTML = ('Total distance: ' + totalDistance.toFixed(2) +  ' km')
+    // document.getElementById("distance").innerHTML = ('Total distance: ' + totalDistance.toFixed(2) +  ' km')
 
     //Stops the Geolocation tracking
     if (watchId) {

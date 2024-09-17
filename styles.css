@@ -13,8 +13,15 @@ button {
 }
 
 #modal-wrapper {
-    display: none;
-    width: 100%;
-    height: 100%;
+    visibility: hidden;
+    /* display: flex; */
+    /* flex-direction: column; */
+    width: 80%;
+    height: 80%;
     position: fixed;
+    outline: solid;
 }
+
+/* .track-btns {
+    flex: 1;
+} */
