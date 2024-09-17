@@ -1,116 +1,116 @@
-let map = L.map('map').setView([51.505, -0.09], 13);
-let route = L.polyline([], { color: 'red' }).addTo(map);
-let marker = null;
-let tracking = false;
-let positions = [];
-let startRun, finishRun;
-let watchId = null;
+// let map = L.map('map').setView([51.505, -0.09], 13);
+// let route = L.polyline([], { color: 'red' }).addTo(map);
+// let marker = null;
+// let tracking = false;
+// let positions = [];
+// let startRun, finishRun;
+// let watchId = null;
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     maxZoom: 19,
+//     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+// }).addTo(map);
 
-const HIGH_ACCURACY = true;
-const MAX_CACHE_AGE_MILLISECOND = 30000;
-const MAX_NEW_POSITION_MILLISECOND = 5000;
+// const HIGH_ACCURACY = true;
+// const MAX_CACHE_AGE_MILLISECOND = 30000;
+// const MAX_NEW_POSITION_MILLISECOND = 5000;
 
-const options = {
-    enableHighAccuracy: HIGH_ACCURACY,
-    maximumAge: MAX_CACHE_AGE_MILLISECOND,
-    timeout: MAX_NEW_POSITION_MILLISECOND,
-};
+// const options = {
+//     enableHighAccuracy: HIGH_ACCURACY,
+//     maximumAge: MAX_CACHE_AGE_MILLISECOND,
+//     timeout: MAX_NEW_POSITION_MILLISECOND,
+// };
 
-function start() {
-    if (navigator.geolocation) {
-        tracking = true;
-        startRun = new Date();
-        watchId = navigator.geolocation.watchPosition(success, error, options);
-    } else {
-        alert('Geolocation not supported');
-    }
-}
+// function start() {
+//     if (navigator.geolocation) {
+//         tracking = true;
+//         startRun = new Date();
+//         watchId = navigator.geolocation.watchPosition(success, error, options);
+//     } else {
+//         alert('Geolocation not supported');
+//     }
+// }
 
 
-function stop() {
-    tracking = false;
-    finishRun = new Date();
+// function stop() {
+//     tracking = false;
+//     finishRun = new Date();
 
-    const time = (finishRun - startRun) / 1000;
-    const timeMinutes = Math.floor(time / 60);
-    const timeSeconds = Math.floor(time % 60);
-    document.getElementById("time").innerHTML = (timeMinutes + ' minutes and '  + timeSeconds + ' seconds');
+//     const time = (finishRun - startRun) / 1000;
+//     const timeMinutes = Math.floor(time / 60);
+//     const timeSeconds = Math.floor(time % 60);
+//     document.getElementById("time").innerHTML = (timeMinutes + ' minutes and '  + timeSeconds + ' seconds');
 
-    //Calculate Distance in Stop Function
+//     //Calculate Distance in Stop Function
    
-    let totalDistance = 0
+//     let totalDistance = 0
 
-    for (let i = 1; i < positions.length; i++) {
-        totalDistance += haversineDistance(positions[i - 1], positions[i])
-    } 
+//     for (let i = 1; i < positions.length; i++) {
+//         totalDistance += haversineDistance(positions[i - 1], positions[i])
+//     } 
    
-    document.getElementById("distance").innerHTML = ('Total distance: ' + totalDistance.toFixed(2) +  ' km')
+//     document.getElementById("distance").innerHTML = ('Total distance: ' + totalDistance.toFixed(2) +  ' km')
 
-    //Stops the Geolocation tracking
-    if (watchId) {
-        navigator.geolocation.clearWatch(watchId);
-    }
-}
+//     //Stops the Geolocation tracking
+//     if (watchId) {
+//         navigator.geolocation.clearWatch(watchId);
+//     }
+// }
 
-function success(position) {
-    //If tracking is not active, then exit.
-    if (!tracking) return;
+// function success(position) {
+//     //If tracking is not active, then exit.
+//     if (!tracking) return;
 
-    //Array that logs the lat and long of the users location.
-    const lat = position.coords.latitude;
-    const lng = position.coords.longitude;
-    const latLong = [lat, lng];
-    console.log(latLong)
+//     //Array that logs the lat and long of the users location.
+//     const lat = position.coords.latitude;
+//     const lng = position.coords.longitude;
+//     const latLong = [lat, lng];
+//     console.log(latLong)
     
-    // Add the new position to the route and positions array
-    positions.push(latLong);
-    route.addLatLng(latLong);
+//     // Add the new position to the route and positions array
+//     positions.push(latLong);
+//     route.addLatLng(latLong);
 
-    // Update marker position
-    if (marker) {
-        marker.setLatLng(latLong);
-    } else {
-        marker = L.marker(latLong).addTo(map);
-    }
+//     // Update marker position
+//     if (marker) {
+//         marker.setLatLng(latLong);
+//     } else {
+//         marker = L.marker(latLong).addTo(map);
+//     }
 
     
 
-    map.setView(latLong, 15);
+//     map.setView(latLong, 15);
 
-}
+// }
 
-function error(err) {
-    if (err.code === 1) {
-        alert("Need geolocation access!");
-    } else {
-        alert("Cannot get current location.");
-    }
-}
+// function error(err) {
+//     if (err.code === 1) {
+//         alert("Need geolocation access!");
+//     } else {
+//         alert("Cannot get current location.");
+//     }
+// }
 
-// Distance Formula Set Up
+// // Distance Formula Set Up
 
-function haversineDistance(coord1, coord2) {
-    const earthRad = 6371; //km
+// function haversineDistance(coord1, coord2) {
+//     const earthRad = 6371; //km
 
-    const diffLat = (coord2[0] - coord1[0]) * Math.PI / 180;  
-    const diffLng = (coord2[1] - coord2[1]) * Math.PI / 180;
+//     const diffLat = (coord2[0] - coord1[0]) * Math.PI / 180;  
+//     const diffLng = (coord2[1] - coord2[1]) * Math.PI / 180;
     
-    const arc = Math.cos(
-       coord1[0] * Math.PI / 180) * Math.cos(coord2[0] * Math.PI / 180) 
-        * Math.sin(diffLng/2) * Math.sin(diffLng/2)
-        + Math.sin(diffLat/2) * Math.sin(diffLat/2);
+//     const arc = Math.cos(
+//        coord1[0] * Math.PI / 180) * Math.cos(coord2[0] * Math.PI / 180) 
+//         * Math.sin(diffLng/2) * Math.sin(diffLng/2)
+//         + Math.sin(diffLat/2) * Math.sin(diffLat/2);
 
-    const line = 2 * Math.atan2(Math.sqrt(arc), Math.sqrt(1-arc));
+//     const line = 2 * Math.atan2(Math.sqrt(arc), Math.sqrt(1-arc));
 
-    const distance = earthRad * line
+//     const distance = earthRad * line
 
-    return  distance
-}
+//     return  distance
+// }
 
 //Priorities:
 //1. Make map appear in a window and start tracking simultaneously
