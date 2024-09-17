@@ -111,3 +111,8 @@ function haversineDistance(coord1, coord2) {
 
     return  distance
 }
+
+//Priorities:
+//1. Make map appear in a window and start tracking simultaneously
+//2. Stop tracking and save data.
+//3. Display saved data on index.html page
