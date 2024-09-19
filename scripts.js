@@ -41,6 +41,7 @@ function start() {
 function stop() {
     tracking = false;
     finishRun = new Date();
+    modal.style.display = "none"
 
     const time = (finishRun - startRun) / 1000;
     const timeMinutes = Math.floor(time / 60);
