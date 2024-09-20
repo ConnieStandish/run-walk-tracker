@@ -46,18 +46,18 @@ function stop() {
     const time = (finishRun - startRun) / 1000;
     const timeMinutes = Math.floor(time / 60);
     const timeSeconds = Math.floor(time % 60);
-    // document.getElementById("time").innerHTML = (timeMinutes + ' minutes and '  + timeSeconds + ' seconds');
-    console.log(timeMinutes + ' mins' + timeSeconds + ' seconds')
+    document.getElementById("time").innerHTML = (timeMinutes + ' minutes and '  + timeSeconds + ' seconds');
+    // console.log(timeMinutes + ' mins' + timeSeconds + ' seconds')
 
     //Calculate Distance in Stop Function
    
-    // let totalDistance = 0
+    let totalDistance = 0
 
-    // for (let i = 1; i < positions.length; i++) {
-    //     totalDistance += haversineDistance(positions[i - 1], positions[i])
-    // } 
+    for (let i = 1; i < positions.length; i++) {
+        totalDistance += haversineDistance(positions[i - 1], positions[i])
+    } 
    
-    // document.getElementById("distance").innerHTML = ('Total distance: ' + totalDistance.toFixed(2) +  ' km')
+    document.getElementById("distance").innerHTML = ('Total distance: ' + totalDistance.toFixed(2) +  ' km')
 
     //Stops the Geolocation tracking
     if (watchId) {
@@ -102,23 +102,23 @@ function error(err) {
 
 // // Distance Formula Set Up
 
-// function haversineDistance(coord1, coord2) {
-//     const earthRad = 6371; //km
+function haversineDistance(coord1, coord2) {
+    const earthRad = 6371; //km
 
-//     const diffLat = (coord2[0] - coord1[0]) * Math.PI / 180;  
-//     const diffLng = (coord2[1] - coord2[1]) * Math.PI / 180;
+    const diffLat = (coord2[0] - coord1[0]) * Math.PI / 180;  
+    const diffLng = (coord2[1] - coord2[1]) * Math.PI / 180;
     
-//     const arc = Math.cos(
-//        coord1[0] * Math.PI / 180) * Math.cos(coord2[0] * Math.PI / 180) 
-//         * Math.sin(diffLng/2) * Math.sin(diffLng/2)
-//         + Math.sin(diffLat/2) * Math.sin(diffLat/2);
+    const arc = Math.cos(
+       coord1[0] * Math.PI / 180) * Math.cos(coord2[0] * Math.PI / 180) 
+        * Math.sin(diffLng/2) * Math.sin(diffLng/2)
+        + Math.sin(diffLat/2) * Math.sin(diffLat/2);
 
-//     const line = 2 * Math.atan2(Math.sqrt(arc), Math.sqrt(1-arc));
+    const line = 2 * Math.atan2(Math.sqrt(arc), Math.sqrt(1-arc));
 
-//     const distance = earthRad * line
+    const distance = earthRad * line
 
-//     return  distance
-// }
+    return  distance
+}
 
 // Priorities:
 // 1. Make map appear in a window and start tracking simultaneously
