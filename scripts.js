@@ -23,12 +23,13 @@ const options = {
     timeout: MAX_NEW_POSITION_MILLISECOND,
 };
 
-function launch() {
-    modal.style.visibility = "visible";
-}
+// function launch() {
+//     modal.style.visibility = "visible";
+// }
 
 function start() {
     if (navigator.geolocation) {
+        modal.style.visibility = "visible";
         tracking = true;
         startRun = new Date();
         watchId = navigator.geolocation.watchPosition(success, error, options);
