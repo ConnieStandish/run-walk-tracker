@@ -20,6 +20,7 @@ button {
     height: 80%;
     position: fixed;
     outline: solid;
+    margin-top: 15px
 }
 
 /* .track-btns {
