@@ -73,7 +73,7 @@ function success(position) {
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
     const latLong = [lat, lng];
-    console.log(latLong)
+    // console.log(latLong)
     
     // Add the new position to the route and positions array
     positions.push(latLong);
