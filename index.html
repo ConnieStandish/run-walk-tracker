@@ -14,15 +14,13 @@
 
 <body>
     <h1>RunWalk Tracker</h1>
-
-    <!-- <button onclick="launch()">Launch Map</button> -->
+    
     <button onclick="start()">Start</button>
 
     <div id="modal-wrapper">
         <div id="modal-content">
             <div id="map"></div>
             <div class="track-btns">
-                <!-- <button onclick="start()">Start</button> -->
                 <button id="save-data" onclick="stop()">Stop</button>
             </div>
         </div>
@@ -32,18 +30,6 @@
         <p id="time"></p>
         <p id="distance"></p>
     </div>
-    
-    <!-- <div id="map"></div>
-
-    <div id="track-buttons">
-        <button onclick="start()">Start</button>
-        <button onclick="stop()">Stop</button>
-    </div>
-
-    <div id="saved-data">
-        <p id="time"></p>
-        <p id="distance"></p>
-    </div> -->
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="scripts.js"></script>
