@@ -24,10 +24,6 @@ const options = {
     timeout: MAX_NEW_POSITION_MILLISECOND,
 };
 
-// function launch() {
-//     modal.style.visibility = "visible";
-// }
-
 function start() {
     if (navigator.geolocation) {
         background.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
