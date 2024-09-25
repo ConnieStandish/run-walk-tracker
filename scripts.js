@@ -1,4 +1,5 @@
 var modal = document.getElementById('modal-wrapper')
+var background = document.querySelector('body')
 
 let map = L.map('map').setView([51.505, -0.09], 13);
 let route = L.polyline([], { color: 'red' }).addTo(map);
@@ -29,6 +30,7 @@ const options = {
 
 function start() {
     if (navigator.geolocation) {
+        background.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
         modal.style.visibility = "visible";
         tracking = true;
         startRun = new Date();
@@ -43,6 +45,7 @@ function stop() {
     tracking = false;
     finishRun = new Date();
     modal.style.visibility = "hidden"
+    background.style.backgroundColor = ""
 
     const time = (finishRun - startRun) / 1000;
     const timeMinutes = Math.floor(time / 60);
