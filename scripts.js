@@ -40,6 +40,11 @@ function start() {
     }
 }
 
+// let save = document.getElementById('save-data')
+
+// save.addEventListener('click', stop)
+
+// const data = document.querySelector('#run-data')
 
 function stop() {
     tracking = false;
