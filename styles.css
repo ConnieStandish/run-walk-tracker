@@ -17,15 +17,9 @@ button {
 
 #modal-wrapper {
     visibility: hidden;
-    /* display: flex; */
-    /* flex-direction: column; */
     width: 80%;
     height: 80%;
     position: fixed;
     outline: solid;
-    margin-top: 15px
+    margin-top: 15px;
 }
-
-/* .track-btns {
-    flex: 1;
-} */
