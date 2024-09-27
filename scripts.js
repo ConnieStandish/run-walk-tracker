@@ -39,19 +39,19 @@ function start() {
 
 //Click Event - Save Data
 
-const saveData = document.getElementById('run-data')
-const saveTime = document.getElementById('time')
-const saveDistance =  document.getElementById('distance')
+// const saveData = document.getElementById('run-data')
+// const saveTime = document.getElementById('time')
+// const saveDistance =  document.getElementById('distance')
 
-let dataArray = localStorage.getItem('data') ? 
-JSON.parse(localStorage.getItem('data')) : []
+// let dataArray = localStorage.getItem('data') ? 
+// JSON.parse(localStorage.getItem('data')) : []
 
-dataArray.forEach(addData);
+// dataArray.forEach(addData);
 
-function addData() {
-    saveData.appendChild(saveTime)
-    saveData.appendChild(saveDistance)
-}
+// function addData() {
+//     saveData.appendChild(saveTime)
+//     saveData.appendChild(saveDistance)
+// }
 
 function stop() {
     tracking = false;
