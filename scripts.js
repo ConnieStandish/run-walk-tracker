@@ -34,6 +34,7 @@ function start() {
     } else {
         alert('Geolocation not supported');
     }
+
 }
 
 // let save = document.getElementById('save-data')
@@ -68,6 +69,7 @@ function stop() {
     if (watchId) {
         navigator.geolocation.clearWatch(watchId);
     }
+
 }
 
 function success(position) {
@@ -124,6 +126,17 @@ function haversineDistance(coord1, coord2) {
 
     return  distance
 }
+
+//Reset Map
+
+// function resetMap() {
+//     marker = true;
+
+//     if (marker) {
+//         positions = []
+//         removeLayer(marker)
+//     }
+// }
 
 
 // Priorities:
