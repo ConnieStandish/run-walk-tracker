@@ -37,11 +37,21 @@ function start() {
 
 }
 
-// let save = document.getElementById('save-data')
+//Click Event - Save Data
 
-// save.addEventListener('click', stop)
+const saveData = document.getElementById('run-data')
+const saveTime = document.getElementById('time')
+const saveDistance =  document.getElementById('distance')
 
-// const data = document.querySelector('#run-data')
+let dataArray = localStorage.getItem('data') ? 
+JSON.parse(localStorage.getItem('data')) : []
+
+dataArray.forEach(addData);
+
+function addData() {
+    saveData.appendChild(saveTime)
+    saveData.appendChild(saveDistance)
+}
 
 function stop() {
     tracking = false;
