@@ -35,6 +35,8 @@ function start() {
         alert('Geolocation not supported');
     }
 
+    resetMap()
+
 }
 
 //Click Event - Save Data
@@ -139,14 +141,16 @@ function haversineDistance(coord1, coord2) {
 
 //Reset Map
 
-// function resetMap() {
-//     marker = true;
+function resetMap() {
+    positions = [];
 
-//     if (marker) {
-//         positions = []
-//         removeLayer(marker)
-//     }
-// }
+    if (marker) {
+        map.removeLayer(marker);
+        marker = null;
+    }
+
+    route.setLatLngs([]);
+}
 
 
 // Priorities:
