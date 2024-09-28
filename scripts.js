@@ -41,19 +41,10 @@ function start() {
 
 //Click Event - Save Data
 
-const saveData = document.getElementById('run-data')
-const saveTime = document.getElementById('time')
-const saveDistance =  document.getElementById('distance')
+// const savedTime = document.getElementById('time')
+// const savedDistance =  document.getElementById('distance')
 
-let dataArray = localStorage.getItem('data') ? 
-JSON.parse(localStorage.getItem('data')) : []
 
-dataArray.forEach(addData);
-
-function addData() {
-    saveData.appendChild(saveTime)
-    saveData.appendChild(saveDistance)
-}
 
 function stop() {
     tracking = false;
@@ -82,6 +73,19 @@ function stop() {
     if (watchId) {
         navigator.geolocation.clearWatch(watchId);
     }
+
+    const savedRuns = document.getElementById('saved-runs')
+    const newTime = document.createElement('p')
+    const newDistance = document.createElement('p')
+    const timeEntry = document.createTextNode(timeMinutes + ' mins ' + timeSeconds + ' seconds')
+    const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' km')
+
+    newTime.appendChild(timeEntry);
+    newDistance.appendChild(distanceEntry)
+
+    savedRuns.appendChild(newTime)
+    savedRuns.appendChild(newDistance)
+
 
 }
 
