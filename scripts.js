@@ -39,10 +39,7 @@ function start() {
 
 }
 
-//Click Event - Save Data
-
-// const savedTime = document.getElementById('time')
-// const savedDistance =  document.getElementById('distance')
+//Save Data
 
 
 
@@ -74,18 +71,8 @@ function stop() {
         navigator.geolocation.clearWatch(watchId);
     }
 
-    const savedRuns = document.getElementById('saved-runs')
-    const newTime = document.createElement('p')
-    const newDistance = document.createElement('p')
-    const timeEntry = document.createTextNode(timeMinutes + ' mins ' + timeSeconds + ' seconds')
-    const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' km')
 
-    newTime.appendChild(timeEntry);
-    newDistance.appendChild(distanceEntry)
-
-    savedRuns.appendChild(newTime)
-    savedRuns.appendChild(newDistance)
-
+    
 
 }
 
@@ -155,6 +142,25 @@ function resetMap() {
     }
 
     route.setLatLngs([]);
+}
+
+//Append Data Function
+
+function appendData() {
+    const savedRuns = document.getElementById('saved-runs')
+    const newEntry = document.createElement('div')
+    const newTime = document.createElement('p')
+    const newDistance = document.createElement('p')
+    // const timeEntry = document.createTextNode(timeMinutes + ' mins ' + timeSeconds + ' seconds')
+    // const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' km')
+
+    // newTime.appendChild(timeEntry);
+    // newDistance.appendChild(distanceEntry)
+
+    newEntry.appendChild(newTime)
+    newEntry.appendChild(newDistance)
+
+    savedRuns.appendChild(newEntry)
 }
 
 
