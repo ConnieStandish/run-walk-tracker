@@ -41,19 +41,19 @@ function start() {
 
 //Click Event - Save Data
 
-// const saveData = document.getElementById('run-data')
-// const saveTime = document.getElementById('time')
-// const saveDistance =  document.getElementById('distance')
+const saveData = document.getElementById('run-data')
+const saveTime = document.getElementById('time')
+const saveDistance =  document.getElementById('distance')
 
-// let dataArray = localStorage.getItem('data') ? 
-// JSON.parse(localStorage.getItem('data')) : []
+let dataArray = localStorage.getItem('data') ? 
+JSON.parse(localStorage.getItem('data')) : []
 
-// dataArray.forEach(addData);
+dataArray.forEach(addData);
 
-// function addData() {
-//     saveData.appendChild(saveTime)
-//     saveData.appendChild(saveDistance)
-// }
+function addData() {
+    saveData.appendChild(saveTime)
+    saveData.appendChild(saveDistance)
+}
 
 function stop() {
     tracking = false;
@@ -64,8 +64,8 @@ function stop() {
     const time = (finishRun - startRun) / 1000;
     const timeMinutes = Math.floor(time / 60);
     const timeSeconds = Math.floor(time % 60);
-    document.getElementById("time").innerHTML = (timeMinutes + ' minutes and '  + timeSeconds + ' seconds');
-    // console.log(timeMinutes + ' mins' + timeSeconds + ' seconds')
+    // document.getElementById("time").innerHTML = (timeMinutes + ' minutes and '  + timeSeconds + ' seconds');
+    console.log(timeMinutes + ' mins ' + timeSeconds + ' seconds')
 
     //Calculate Distance in Stop Function
    
@@ -75,7 +75,8 @@ function stop() {
         totalDistance += haversineDistance(positions[i - 1], positions[i])
     } 
    
-    document.getElementById("distance").innerHTML = ('Total distance: ' + totalDistance.toFixed(2) +  ' km')
+    // document.getElementById("distance").innerHTML = ('Total distance: ' + totalDistance.toFixed(2) +  ' km')
+    console.log('Total distance: ' + totalDistance.toFixed(2) + ' km')
 
     //Stops the Geolocation tracking
     if (watchId) {
