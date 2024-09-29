@@ -165,6 +165,22 @@ function resetMap() {
     route.setLatLngs([]);
 }
 
+//Display Data
+
+// function loadRunData(runData) {
+//     localStorage.getItem('runs')
+
+//     for (i = 0; i < savedRuns.length; i++)
+
+//     savedRuns.forEach(run=>{
+//         const displayRuns = document.getElementById('saved-runs')
+//         displayRuns.innerText = runData
+//     });
+
+//     displayRuns.appendChild(runData)
+// }
+
+// document.addEventListener('DOMContentLoaded', loadRunData);
 
 // Priorities:
 // 2. Stop tracking and save data.
