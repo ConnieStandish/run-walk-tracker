@@ -167,17 +167,21 @@ function resetMap() {
 
 //Display Data
 
-// function loadRunData(runData) {
+var runInfo = document.getElementById('saved-runs')
+
+// function loadRunData() {
 //     localStorage.getItem('runs')
 
-//     for (i = 0; i < savedRuns.length; i++)
+//     for (var i = 0; i < localStorage.length; i++){
+//         runInfo.append(localStorage.getItem(localStorage.runs(i)))
+//     }
 
-//     savedRuns.forEach(run=>{
-//         const displayRuns = document.getElementById('saved-runs')
-//         displayRuns.innerText = runData
-//     });
+    // savedRuns.forEach(run=>{
+    //     const displayRuns = document.getElementById('saved-runs')
+    //     displayRuns.innerText = runData
+    // });
 
-//     displayRuns.appendChild(runData)
+    // displayRuns.appendChild(runData)
 // }
 
 // document.addEventListener('DOMContentLoaded', loadRunData);
