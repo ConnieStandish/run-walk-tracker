@@ -86,7 +86,7 @@ function stop() {
     //Save Data
     let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
 
-    savedRuns.push(timeMinutes, timeSeconds, totalDistance.toFixed(2));
+    savedRuns.push((timeMinutes + ':' + timeSeconds), totalDistance.toFixed(2) + ' km');
 
     localStorage.setItem('runs', JSON.stringify(savedRuns));
 
