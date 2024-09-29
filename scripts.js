@@ -68,25 +68,30 @@ function stop() {
     }
 
     //Display Run Data
-    const displayedRuns = document.getElementById('displayed-runs')
-    const newEntry = document.createElement('div')
-    const newTime = document.createElement('p')
-    const newDistance = document.createElement('p')
-    const timeEntry = document.createTextNode(timeMinutes + ' mins ' + timeSeconds + ' seconds')
-    const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' km')
+    // const displayedRuns = document.getElementById('displayed-runs')
+    // const newEntry = document.createElement('div')
+    // const newTime = document.createElement('p')
+    // const newDistance = document.createElement('p')
+    // const timeEntry = document.createTextNode(timeMinutes + ' mins ' + timeSeconds + ' seconds')
+    // const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' km')
 
-    newTime.appendChild(timeEntry);
-    newDistance.appendChild(distanceEntry)
+    // newTime.appendChild(timeEntry);
+    // newDistance.appendChild(distanceEntry)
 
-    newEntry.appendChild(newTime)
-    newEntry.appendChild(newDistance)
+    // newEntry.appendChild(newTime)
+    // newEntry.appendChild(newDistance)
 
-    displayedRuns.appendChild(newEntry)
+    // displayedRuns.appendChild(newEntry)
 
     //Save Data
     let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
 
-    savedRuns.push((timeMinutes + ':' + timeSeconds), totalDistance.toFixed(2) + ' km');
+    const runData  = {
+        time: timeMinutes + ' minutes and ' + timeSeconds + ' seconds',
+        distance: totalDistance.toFixed(2) + ' km'
+    }
+
+    savedRuns.push(runData);
 
     localStorage.setItem('runs', JSON.stringify(savedRuns));
 
