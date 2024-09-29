@@ -39,15 +39,6 @@ function start() {
 
 }
 
-//Save Data
-
-// function save() {
-//     let entriesArray = localStorage.getItem('runs') ? 
-//     JSON.parse(localStorage.getItem('runs')) : [];
-// }
-
-
-
 function stop() {
     tracking = false;
     finishRun = new Date();
