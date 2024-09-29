@@ -183,7 +183,4 @@ function resetMap() {
 // document.addEventListener('DOMContentLoaded', loadRunData);
 
 // Priorities:
-// 2. Stop tracking and save data.
 // 3. Display saved data on index.html page
-
-//How to approach: Create a click event in the stop function. Save run-data in localStorage.
