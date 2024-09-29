@@ -95,6 +95,7 @@ function stop() {
 
     localStorage.setItem('runs', JSON.stringify(savedRuns));
 
+    loadRunData(runData)
 }
 
 function success(position) {
@@ -169,22 +170,21 @@ function resetMap() {
 
 var runInfo = document.getElementById('saved-runs')
 
-// function loadRunData() {
-//     localStorage.getItem('runs')
+function loadRunData(runData) {
+    localStorage.getItem('runs')
 
-//     for (var i = 0; i < localStorage.length; i++){
-//         runInfo.append(localStorage.getItem(localStorage.runs(i)))
-//     }
+    for (var i = 0; i < localStorage.length; i++){
+        runInfo.append(localStorage.getItem(localStorage.key(i)))
+    }
 
-    // savedRuns.forEach(run=>{
-    //     const displayRuns = document.getElementById('saved-runs')
-    //     displayRuns.innerText = runData
-    // });
+    savedRuns.forEach(run=>{
+        runInfo.innerText = runData
+    });
 
-    // displayRuns.appendChild(runData)
-// }
+    runInfo.appendChild(runData)
+}
 
-// document.addEventListener('DOMContentLoaded', loadRunData);
+document.addEventListener('DOMContentLoaded', loadRunData);
 
 // Priorities:
 // 3. Display saved data on index.html page
