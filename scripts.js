@@ -68,20 +68,20 @@ function stop() {
     }
 
     //Display Run Data
-    // const displayedRuns = document.getElementById('displayed-runs')
-    // const newEntry = document.createElement('div')
-    // const newTime = document.createElement('p')
-    // const newDistance = document.createElement('p')
-    // const timeEntry = document.createTextNode(timeMinutes + ' mins ' + timeSeconds + ' seconds')
-    // const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' km')
+    const displayRuns = document.getElementById('display-runs')
+    const newEntry = document.createElement('div')
+    const newTime = document.createElement('p')
+    const newDistance = document.createElement('p')
+    const timeEntry = document.createTextNode(timeMinutes + ' mins ' + timeSeconds + ' seconds')
+    const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' km')
 
-    // newTime.appendChild(timeEntry);
-    // newDistance.appendChild(distanceEntry)
+    newTime.appendChild(timeEntry);
+    newDistance.appendChild(distanceEntry)
 
-    // newEntry.appendChild(newTime)
-    // newEntry.appendChild(newDistance)
+    newEntry.appendChild(newTime)
+    newEntry.appendChild(newDistance)
 
-    // displayedRuns.appendChild(newEntry)
+    displayRuns.appendChild(newEntry)
 
     //Save Data
     let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
@@ -95,8 +95,10 @@ function stop() {
 
     localStorage.setItem('runs', JSON.stringify(savedRuns));
 
-    loadRunData(runData)
+    // loadRunData(runData)
 }
+
+document.addEventListener('DOMContentLoaded', loadRunData);
 
 function success(position) {
     //If tracking is not active, then exit.
@@ -168,23 +170,24 @@ function resetMap() {
 
 //Display Data
 
-var runInfo = document.getElementById('saved-runs')
-
 function loadRunData(runData) {
-    localStorage.getItem('runs')
-
-    for (var i = 0; i < localStorage.length; i++){
-        runInfo.append(localStorage.getItem(localStorage.key(i)))
-    }
+    let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
 
     savedRuns.forEach(run=>{
-        runInfo.innerText = runData
+        for (var i = 0; i < localStorage.length; i++){
+            let data = document.createElement('p')
+            data.append(localStorage.getItem(localStorage.key(i)))
+        }
+
+        let runInfo = document.getElementById('saved-runs');
+        let entry = document.createElement('div');
+        entry.innerHTML = `<p>Time: ${run.time}</p><p>Distance: ${run.distance}</p>`;
+
+
+        runInfo.appendChild(entry)
     });
 
-    runInfo.appendChild(runData)
 }
-
-document.addEventListener('DOMContentLoaded', loadRunData);
 
 // Priorities:
 // 3. Display saved data on index.html page
