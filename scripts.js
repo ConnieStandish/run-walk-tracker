@@ -45,6 +45,9 @@ function stop() {
     modal.style.visibility = "hidden"
     background.style.backgroundColor = ""
 
+    //Day.JS
+    const date = dayjs();
+
     //Calculate Time
 
     const time = (finishRun - startRun) / 1000;
@@ -72,14 +75,18 @@ function stop() {
     //Display Run Data
     const displayRuns = document.getElementById('display-runs')
     const newEntry = document.createElement('div')
+    const newDate = document.createElement('p')
     const newTime = document.createElement('p')
     const newDistance = document.createElement('p')
+    const dateEntry = document.createTextNode(date.format('M/D/YYYY'))
     const timeEntry = document.createTextNode(timeMinutes + ' mins ' + timeSeconds + ' seconds')
     const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' miles')
 
+    newDate.appendChild(dateEntry)
     newTime.appendChild(timeEntry);
     newDistance.appendChild(distanceEntry)
 
+    newEntry.appendChild(newDate)
     newEntry.appendChild(newTime)
     newEntry.appendChild(newDistance)
 
@@ -89,6 +96,7 @@ function stop() {
     let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
 
     const runData  = {
+        date: date.format('M/D/YYYY'),
         time: timeMinutes + ' minutes and ' + timeSeconds + ' seconds',
         distance: totalDistance.toFixed(2) + ' miles'
     }
@@ -185,36 +193,13 @@ function loadRunData(runData) {
 
         let runInfo = document.getElementById('saved-runs');
         let entry = document.createElement('div');
-        entry.innerHTML = `<p>Time: ${run.time}</p><p>Distance: ${run.distance}</p>`;
+        entry.innerHTML = `<p>${run.date}</p><p>Time: ${run.time}</p><p>Distance: ${run.distance}</p>`;
 
 
         runInfo.appendChild(entry)
     });
 
 }
-
-//Date Set Up
-
-// const date = new Date();
-// const dateDisplay = dateFormat(date)
-
-// function dateFormat(dateObject){
-//     const parts = {
-//         date: dateObject.getDate(),
-//         month: dateObject.getMonth() + 1,
-//         year: dateObject.getFullYear()
-//     };
-//     return `${parts.date}/${parts.month}/${parts.year}`;
-// }
-
-// console.log(dateDisplay)
-
-//Day.JS
-
-const date = dayjs();
-
-console.log(date.format("M/D/YYYY"))
-
 
 
 // Priorities:
