@@ -190,4 +190,6 @@ function loadRunData(runData) {
 }
 
 // Priorities:
-// 3. Display saved data on index.html page
+// 4. Need a date display
+// 5. Pace formula and display
+//6. Filter dates
