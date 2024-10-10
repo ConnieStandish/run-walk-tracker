@@ -45,6 +45,8 @@ function stop() {
     modal.style.visibility = "hidden"
     background.style.backgroundColor = ""
 
+    //Calculate Time
+
     const time = (finishRun - startRun) / 1000;
     const timeMinutes = Math.floor(time / 60);
     const timeSeconds = Math.floor(time % 60);
@@ -188,6 +190,30 @@ function loadRunData(runData) {
     });
 
 }
+
+//Date Set Up
+
+// const date = new Date();
+// const dateDisplay = dateFormat(date)
+
+// function dateFormat(dateObject){
+//     const parts = {
+//         date: dateObject.getDate(),
+//         month: dateObject.getMonth() + 1,
+//         year: dateObject.getFullYear()
+//     };
+//     return `${parts.date}/${parts.month}/${parts.year}`;
+// }
+
+// console.log(dateDisplay)
+
+//Day.JS
+
+const date = dayjs();
+
+console.log(date.format("M/D/YYYY"))
+
+
 
 // Priorities:
 // 4. Need a date display
