@@ -62,7 +62,7 @@ function stop() {
     } 
    
     // document.getElementById("distance").innerHTML = ('Total distance: ' + totalDistance.toFixed(2) +  ' km')
-    console.log('Total distance: ' + totalDistance.toFixed(2) + ' km')
+    console.log('Total distance: ' + totalDistance.toFixed(2) + ' miles')
 
     //Stops the Geolocation tracking
     if (watchId) {
@@ -75,7 +75,7 @@ function stop() {
     const newTime = document.createElement('p')
     const newDistance = document.createElement('p')
     const timeEntry = document.createTextNode(timeMinutes + ' mins ' + timeSeconds + ' seconds')
-    const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' km')
+    const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' miles')
 
     newTime.appendChild(timeEntry);
     newDistance.appendChild(distanceEntry)
@@ -90,7 +90,7 @@ function stop() {
 
     const runData  = {
         time: timeMinutes + ' minutes and ' + timeSeconds + ' seconds',
-        distance: totalDistance.toFixed(2) + ' km'
+        distance: totalDistance.toFixed(2) + ' miles'
     }
 
     savedRuns.push(runData);
@@ -154,7 +154,9 @@ function haversineDistance(coord1, coord2) {
 
     const distance = earthRad * line
 
-    return  distance
+    const miles = distance * 0.621371
+
+    return  miles
 }
 
 //Reset Map
@@ -219,3 +221,4 @@ console.log(date.format("M/D/YYYY"))
 // 4. Need a date display
 // 5. Pace formula and display
 //6. Filter dates
+//7. Convert KM to miles
