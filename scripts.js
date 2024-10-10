@@ -222,3 +222,4 @@ console.log(date.format("M/D/YYYY"))
 // 5. Pace formula and display
 //6. Filter dates
 //7. Convert KM to miles
+//8. Order data in descending order
