@@ -67,6 +67,18 @@ function stop() {
     // document.getElementById("distance").innerHTML = ('Total distance: ' + totalDistance.toFixed(2) +  ' km')
     console.log('Total distance: ' + totalDistance.toFixed(2) + ' miles')
 
+    //Calculate Pace
+
+    const pace = time / totalDistance.toFixed(2);
+    const paceMin = Math.floor(pace);
+    const paceSec = Math.round((pace - paceMin) * 60);
+
+    let formatPaceMin = String(paceMin).padStart(2, '0')
+
+    let formatPaceSec = String(paceSec).padStart(2, '0')
+
+    console.log('The pace is: ' + formatPaceMin + ':' + formatPaceSec)
+
     //Stops the Geolocation tracking
     if (watchId) {
         navigator.geolocation.clearWatch(watchId);
