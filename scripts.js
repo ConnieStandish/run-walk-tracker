@@ -110,7 +110,8 @@ function stop() {
     const runData  = {
         date: date.format('M/D/YYYY'),
         time: timeMinutes + ' minutes and ' + timeSeconds + ' seconds',
-        distance: totalDistance.toFixed(2) + ' miles'
+        distance: totalDistance.toFixed(2) + ' miles',
+        pace: formatPaceMin + ':' + formatPaceSec
     }
 
     savedRuns.push(runData);
@@ -207,7 +208,7 @@ function loadRunData(runData) {
 
         let runInfo = document.getElementById('saved-runs');
         let entry = document.createElement('div');
-        entry.innerHTML = `<p>${run.date}</p><p>Time: ${run.time}</p><p>Distance: ${run.distance}</p>`;
+        entry.innerHTML = `<p>${run.date}</p><p>Time: ${run.time}</p><p>Distance: ${run.distance}</p><p>Pace: ${run.pace}</p>`;
 
 
         runInfo.appendChild(entry)
