@@ -90,17 +90,21 @@ function stop() {
     const newDate = document.createElement('p')
     const newTime = document.createElement('p')
     const newDistance = document.createElement('p')
+    const newPace = document.createElement('p')
     const dateEntry = document.createTextNode(date.format('M/D/YYYY'))
     const timeEntry = document.createTextNode(timeMinutes + ' mins ' + timeSeconds + ' seconds')
     const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' miles')
+    const paceEntry = document.createTextNode('Pace: ' + formatPaceMin + ':' + formatPaceSec)
 
     newDate.appendChild(dateEntry)
     newTime.appendChild(timeEntry);
     newDistance.appendChild(distanceEntry)
+    newPace.appendChild(paceEntry)
 
     newEntry.appendChild(newDate)
     newEntry.appendChild(newTime)
     newEntry.appendChild(newDistance)
+    newEntry.appendChild(newPace)
 
     displayRuns.appendChild(newEntry)
 
