@@ -185,6 +185,8 @@ function resetMap() {
 function loadRunData(runData) {
     let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
 
+    savedRuns.reverse();
+
     savedRuns.forEach(run=>{
         for (var i = 0; i < localStorage.length; i++){
             let data = document.createElement('p')
