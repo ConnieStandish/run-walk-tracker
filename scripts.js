@@ -151,7 +151,7 @@ function haversineDistance(coord1, coord2) {
     const earthRad = 6371; //km
 
     const diffLat = (coord2[0] - coord1[0]) * Math.PI / 180;  
-    const diffLng = (coord2[1] - coord2[1]) * Math.PI / 180;
+    const diffLng = (coord2[1] - coord1[1]) * Math.PI / 180;
     
     const arc = Math.cos(
        coord1[0] * Math.PI / 180) * Math.cos(coord2[0] * Math.PI / 180) 
@@ -203,7 +203,6 @@ function loadRunData(runData) {
 
 
 // Priorities:
-// 4. Need a date display
 // 5. Pace formula and display
 //6. Filter dates
 //7. Convert KM to miles
