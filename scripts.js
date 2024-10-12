@@ -220,6 +220,15 @@ function loadRunData(runData) {
 
 }
 
+//Reset Button
+
+function reset() {
+    const allRuns = document.getElementById('all-data')
+    localStorage.clear()
+    if (localStorage.length === 0)
+        allRuns.innerHTML = "";
+}
+
 
 // Priorities:
 // 5. Pace formula and display

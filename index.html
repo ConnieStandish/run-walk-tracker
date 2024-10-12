@@ -17,7 +17,7 @@
     
     <button class="start-btn" onclick="start()">Start</button>
 
-    <button class="reset-btn">Clear</button>
+    <button class="reset-btn" onclick="reset()">Reset</button>
 
     <div id="modal-wrapper">
         <div id="modal-content">
@@ -31,10 +31,13 @@
     <!-- <p id="time"></p>
     <p id="distance"></p> -->
 
-    <div id="display-runs"></div>
+    <div id="all-data">
 
-    <div id="saved-runs"></div>
+        <div id="display-runs"></div>
 
+        <div id="saved-runs"></div>
+        
+    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/dayjs.min.js"></script>
