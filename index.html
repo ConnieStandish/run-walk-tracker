@@ -19,6 +19,11 @@
 
     <button class="reset-btn" onclick="reset()">Reset</button>
 
+    <div id="date-filter">
+        <input onchange= "filterDate()" id="start-date" type="date" value="">
+        <input onchange= "filterDate()" id="end-date" type="date" value="">
+    </div>
+
     <div id="modal-wrapper">
         <div id="modal-content">
             <div id="map"></div>
@@ -36,7 +41,7 @@
         <div id="display-runs"></div>
 
         <div id="saved-runs"></div>
-        
+
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
