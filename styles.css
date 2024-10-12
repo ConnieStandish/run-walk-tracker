@@ -23,3 +23,12 @@ button {
     outline: solid;
     margin-top: 15px;
 }
+
+#date-filter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#date-filter input {
+    margin: 0 10px;
+}
