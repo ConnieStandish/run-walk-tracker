@@ -229,6 +229,22 @@ function reset() {
         allRuns.innerHTML = "";
 }
 
+//Date Filter
+// const startDate = document.getElementById('start-date');
+// const endDate = document.getElementById('end-date');
+
+// function filterDate() {
+//     const dates = dayjs()
+
+//     filterDate = dates.filter(dateRange)
+
+//     function dateRange(date) {
+//         return date >= startDate.value && date <= endDate.value
+//     }
+
+//     console.log(dateRange)
+// }
+
 
 // Priorities:
 // 5. Pace formula and display
