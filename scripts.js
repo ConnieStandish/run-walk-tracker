@@ -248,7 +248,7 @@ function reset() {
 //Data Filter Menu
 
 //Open
-function dateFilter() {
+function dataFilter() {
     document.getElementById("content").classList.add("show")
 }
 
@@ -256,7 +256,7 @@ function dateFilter() {
 window.onclick = function(event) {
     if (!event.target.matches('.filter')) {
 
-        var limits = document.getElementsByClassName("date-content");
+        var limits = document.getElementsByClassName("data-content");
         var i;
         for (i = 0; i < limits.length; i++) {
             var openFilter = limits[i];

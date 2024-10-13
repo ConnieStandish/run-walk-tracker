@@ -24,22 +24,22 @@ button {
     margin-top: 15px;
 }
 
-#date-filter {
+#data-filter {
     position: relative;
     float: right;
 }
 
-.date-content {
+.data-content {
     display: none;
     position: absolute;
     z-index: 1;
 }
 
-.date-content p {
+.data-content p {
     display: block;
 }
 
-.date-content p a {
+.data-content p a {
     color: black;
     text-decoration: none;
 }
