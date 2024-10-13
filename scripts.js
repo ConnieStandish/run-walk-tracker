@@ -245,6 +245,32 @@ function reset() {
 //     console.log(dateRange)
 // }
 
+//Data Filter Menu
+
+//Open
+function dateFilter() {
+    document.getElementById("content").classList.add("show")
+}
+
+//Close By Clicking Outside It
+window.onclick = function(event) {
+    if (!event.target.matches('.filter')) {
+
+        var limits = document.getElementsByClassName("date-content");
+        var i;
+        for (i = 0; i < limits.length; i++) {
+            var openFilter = limits[i];
+            if (openFilter.classList.contains('show')) {
+                openFilter.classList.remove('show')
+            }
+        }
+    }
+}
+
+document.getElementById("content").addEventListener('click', function(event){
+    event.stopPropagation();
+})
+
 
 // Priorities:
 // 5. Pace formula and display

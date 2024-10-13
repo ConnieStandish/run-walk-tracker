@@ -25,10 +25,24 @@ button {
 }
 
 #date-filter {
-    display: flex;
-    justify-content: flex-end;
+    position: relative;
+    float: right;
 }
 
-#date-filter input {
-    margin: 0 10px;
+.date-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
 }
+
+.date-content p {
+    display: block;
+}
+
+.show {
+    display: block;
+}
+
+/* #date-filter input {
+    margin: 0 10px;
+} */

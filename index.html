@@ -19,9 +19,19 @@
 
     <button class="reset-btn" onclick="reset()">Reset</button>
 
-    <div id="date-filter">
+    <!-- <div id="date-filter">
         <input onchange= "filterDate()" id="start-date" type="date" value="">
         <input onchange= "filterDate()" id="end-date" type="date" value="">
+    </div> -->
+
+    <div id="date-filter">
+        <button class="filter" onclick="dateFilter()">Filter Data</button>
+        <div id="content" class="date-content">
+            <p>Today</p>
+            <p>Last 14 Days</p>
+            <p>Last 30 Days</p>
+            <p>Everything</p>
+        </div>
     </div>
 
     <div id="modal-wrapper">
