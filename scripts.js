@@ -271,6 +271,18 @@ document.getElementById("content").addEventListener('click', function(event){
     event.stopPropagation();
 })
 
+function filterRuns(filterType) {
+    if (filterType === 'today') {
+        console.log('today selected')
+    } else if (filterType === 'last14') {
+        console.log('last 14 days selected')
+    } else if (filterType === 'last30') {
+        console.log('last 30 days selected')
+    } else if (filterType === 'all') {
+        console.log('all selected')
+    }
+}
+
 
 // Priorities:
 // 5. Pace formula and display
