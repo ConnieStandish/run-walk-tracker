@@ -51,10 +51,10 @@ function stop() {
     //Calculate Time
 
     const time = (finishRun - startRun) / 1000;
-    const timeMinutes = Math.floor(time / 60);
+    const timeHours = Math.floor(time / 3600);
+    const timeMinutes = Math.floor((time % 3600) / 60);
     const timeSeconds = Math.floor(time % 60);
-    // document.getElementById("time").innerHTML = (timeMinutes + ' minutes and '  + timeSeconds + ' seconds');
-    console.log(timeMinutes + ' mins ' + timeSeconds + ' seconds')
+    console.log(timeHours + ' hours ' + timeMinutes + ' mins ' + timeSeconds + ' seconds')
 
     //Calculate Distance in Stop Function
    
@@ -63,8 +63,6 @@ function stop() {
     for (let i = 1; i < positions.length; i++) {
         totalDistance += haversineDistance(positions[i - 1], positions[i])
     } 
-   
-    // document.getElementById("distance").innerHTML = ('Total distance: ' + totalDistance.toFixed(2) +  ' km')
     console.log('Total distance: ' + totalDistance.toFixed(2) + ' miles')
 
     //Calculate Pace
@@ -92,7 +90,7 @@ function stop() {
     const newDistance = document.createElement('p')
     const newPace = document.createElement('p')
     const dateEntry = document.createTextNode(date.format('M/D/YYYY'))
-    const timeEntry = document.createTextNode(timeMinutes + ' mins ' + timeSeconds + ' seconds')
+    const timeEntry = document.createTextNode(timeHours + ' hours ' + timeMinutes + ' mins ' + timeSeconds + ' seconds')
     const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' miles')
     const paceEntry = document.createTextNode('Pace: ' + formatPaceMin + ':' + formatPaceSec)
 
@@ -113,7 +111,7 @@ function stop() {
 
     const runData  = {
         date: date.format('M/D/YYYY'),
-        time: timeMinutes + ' minutes and ' + timeSeconds + ' seconds',
+        time: timeHours + ' hours ' + timeMinutes + ' minutes and ' + timeSeconds + ' seconds',
         distance: totalDistance.toFixed(2) + ' miles',
         pace: formatPaceMin + ':' + formatPaceSec
     }
@@ -122,7 +120,6 @@ function stop() {
 
     localStorage.setItem('runs', JSON.stringify(savedRuns));
 
-    // loadRunData(runData)
 }
 
 document.addEventListener('DOMContentLoaded', loadRunData);
