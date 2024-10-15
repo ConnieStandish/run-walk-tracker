@@ -219,12 +219,12 @@ function loadRunData(runData) {
 
 //Reset Button
 
-function reset() {
-    const allRuns = document.getElementById('all-data')
-    localStorage.clear()
-    if (localStorage.length === 0)
-        allRuns.innerHTML = "";
-}
+// function reset() {
+//     const allRuns = document.getElementById('all-data')
+//     localStorage.clear()
+//     if (localStorage.length === 0)
+//         allRuns.innerHTML = "";
+// }
 
 //Date Filter
 // const startDate = document.getElementById('start-date');
