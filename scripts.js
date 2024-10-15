@@ -219,12 +219,12 @@ function loadRunData(runData) {
 
 //Reset Button
 
-// function reset() {
-//     const allRuns = document.getElementById('all-data')
-//     localStorage.clear()
-//     if (localStorage.length === 0)
-//         allRuns.innerHTML = "";
-// }
+function reset() {
+    const allRuns = document.getElementById('display-runs')
+    localStorage.clear()
+    if (localStorage.length === 0)
+        allRuns.innerHTML = "";
+}
 
 //Date Filter
 // const startDate = document.getElementById('start-date');
@@ -269,8 +269,17 @@ document.getElementById("content").addEventListener('click', function(event){
 })
 
 function filterRuns(filterType) {
+    let currentDate = new Date()
+
+    let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
+    
+    savedRuns.filter(runs =>{
+        const dateRange = new Date(runs.date)
+    })
+
     if (filterType === 'today') {
-        console.log('today selected')
+        console.log(currentDate.toLocaleDateString("en-US"))
+        return currentDate
     } else if (filterType === 'last14') {
         console.log('last 14 days selected')
     } else if (filterType === 'last30') {
