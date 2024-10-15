@@ -245,7 +245,7 @@ function loadRunData(runData) {
 //Data Filter Menu
 
 //Open
-function dataFilter() {
+function dataFilterTool() {
     document.getElementById("content").classList.add("show")
 }
 
