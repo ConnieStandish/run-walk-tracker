@@ -271,24 +271,31 @@ document.getElementById("content").addEventListener('click', function(event){
 })
 
 function filterRuns(filterType) {
-    let currentDate = new Date()
 
-    let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
-    
-    savedRuns.filter(runs =>{
-        const dateRange = new Date(runs.date)
-    })
+    let current = dayjs()
+    let currentDate = current.format('M/D/YYYY')
 
     if (filterType === 'today') {
-        console.log(currentDate.toLocaleDateString("en-US"))
+        console.log(currentDate)
         return currentDate
     } else if (filterType === 'last14') {
-        console.log('last 14 days selected')
+        console.log(currentDate)
+        return currentDate.subtract(14, 'day')
     } else if (filterType === 'last30') {
         console.log('last 30 days selected')
     } else if (filterType === 'all') {
         console.log('all selected')
     }
+
+    return JSON.parse(localStorage.getItem('runs')).filter(runs => runs.date === dayjs())
+
+    // let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
+    
+    // savedRuns.filter(runs =>{
+    //     const dateRange = new Date(runs.date)
+    // })
+
+    
 }
 
 
