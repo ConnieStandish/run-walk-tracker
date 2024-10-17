@@ -272,30 +272,48 @@ document.getElementById("content").addEventListener('click', function(event){
 
 function filterRuns(filterType) {
 
-    let current = dayjs()
-    let currentDate = current.format('M/D/YYYY')
+    let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
+    let filteredData = [];
 
+    let currentDate = dayjs()
+    
     if (filterType === 'today') {
-        console.log(currentDate)
-        return currentDate
+        filteredData = savedRuns.filter(run => dayjs(run.date, 'M/D/YYYY').isSame(currentDate, 'day'))
+
     } else if (filterType === 'last14') {
-        console.log(currentDate)
-        return currentDate.subtract(14, 'day')
+        const startDate = currentDate.subtract(14, 'day');
+        filteredData = savedRuns.filter(run => {
+            const runDate = dayjs(run.date, 'M/D/YYYY');
+            return runDate.isAfter(startDate) && runDate.isBefore(currentDate.add(1, 'day'))
+        })
+       
     } else if (filterType === 'last30') {
-        console.log('last 30 days selected')
+        const startDate = currentDate.subtract(30, 'day');
+        filteredData = savedRuns.filter(run => {
+            const runDate = dayjs(run.date, 'M/D/YYYY');
+            return runDate.isAfter(startDate) && runDate.isBefore(currentDate.add(1, 'day'))
+        })
+    
     } else if (filterType === 'all') {
-        console.log('all selected')
+        filteredData = savedRuns.filter(run => dayjs(run.date, 'M/D/YYYY'))
     }
 
-    return JSON.parse(localStorage.getItem('runs')).filter(runs => runs.date === dayjs())
+    console.log(filteredData)
 
-    // let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
-    
-    // savedRuns.filter(runs =>{
-    //     const dateRange = new Date(runs.date)
-    // })
+}
 
-    
+displayFilteredRuns(filterRuns)
+
+function displayFilteredRuns(runs) {
+    const runList = document.getElementById('saved-runs')
+    runList.innerHTML = "";
+
+    runs.forEach(run=>{
+        let entry = document.createElement('div')
+        entry.innerHTML = `<p>${run.date}</p><p>Time: ${run.time}</p><p>Distance: ${run.distance}</p><p>Pace: ${run.pace}</p>`;
+    })
+
+    runList.appendChild(entry)
 }
 
 
