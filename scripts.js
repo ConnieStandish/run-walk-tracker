@@ -228,22 +228,6 @@ function reset() {
         allRuns.innerHTML = "";
 }
 
-//Date Filter
-// const startDate = document.getElementById('start-date');
-// const endDate = document.getElementById('end-date');
-
-// function filterDate() {
-//     const dates = dayjs()
-
-//     filterDate = dates.filter(dateRange)
-
-//     function dateRange(date) {
-//         return date >= startDate.value && date <= endDate.value
-//     }
-
-//     console.log(dateRange)
-// }
-
 //Data Filter Menu
 
 //Open
@@ -281,7 +265,7 @@ function filterRuns(filterType) {
         filteredData = savedRuns.filter(run => dayjs(run.date, 'M/D/YYYY').isSame(currentDate, 'day'))
 
     } else if (filterType === 'last14') {
-        const startDate = currentDate.subtract(14, 'day');
+        const startDate = currentDate.subtract(1, 'day');
         filteredData = savedRuns.filter(run => {
             const runDate = dayjs(run.date, 'M/D/YYYY');
             return runDate.isAfter(startDate) && runDate.isBefore(currentDate.add(1, 'day'))
@@ -299,23 +283,24 @@ function filterRuns(filterType) {
     }
 
     console.log(filteredData)
-
+    displayFilteredRuns(filterRuns)
 }
-
-displayFilteredRuns(filterRuns)
 
 function displayFilteredRuns(runs) {
-    const runList = document.getElementById('saved-runs')
-    runList.innerHTML = "";
-
-    runs.forEach(run=>{
-        let entry = document.createElement('div')
+    let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
+        
+    savedRuns.forEach(run=>{
+        const runList = document.getElementById('saved-runs')
+        runList.innerHTML = "";
+    
+        const entry = document.createElement('div')
+        
         entry.innerHTML = `<p>${run.date}</p><p>Time: ${run.time}</p><p>Distance: ${run.distance}</p><p>Pace: ${run.pace}</p>`;
+        
+        runList.appendChild(entry)
     })
-
-    runList.appendChild(entry)
+    
 }
-
 
 // Priorities:
 // 5. Pace formula and display
