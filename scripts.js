@@ -283,15 +283,15 @@ function filterRuns(filterType) {
     }
 
     console.log(filteredData)
-    displayFilteredRuns(filterRuns)
+    displayFilteredRuns(filteredData)
 }
 
-function displayFilteredRuns(runs) {
-    let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
+function displayFilteredRuns(savedRuns) {
+
+    const runList = document.getElementById('saved-runs')
+    runList.innerHTML = "";
         
     savedRuns.forEach(run=>{
-        const runList = document.getElementById('saved-runs')
-        runList.innerHTML = "";
     
         const entry = document.createElement('div')
         
@@ -301,9 +301,3 @@ function displayFilteredRuns(runs) {
     })
     
 }
-
-// Priorities:
-// 5. Pace formula and display
-//6. Filter dates
-//7. Convert KM to miles
-//8. Order data in descending order
