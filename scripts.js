@@ -265,7 +265,7 @@ function filterRuns(filterType) {
         filteredData = savedRuns.filter(run => dayjs(run.date, 'M/D/YYYY').isSame(currentDate, 'day'))
 
     } else if (filterType === 'last14') {
-        const startDate = currentDate.subtract(1, 'day');
+        const startDate = currentDate.subtract(14, 'day');
         filteredData = savedRuns.filter(run => {
             const runDate = dayjs(run.date, 'M/D/YYYY');
             return runDate.isAfter(startDate) && runDate.isBefore(currentDate.add(1, 'day'))
