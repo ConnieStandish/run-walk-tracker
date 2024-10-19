@@ -54,7 +54,18 @@ function stop() {
     const timeHours = Math.floor(time / 3600);
     const timeMinutes = Math.floor((time % 3600) / 60);
     const timeSeconds = Math.floor(time % 60);
-    console.log(timeHours + ' hours ' + timeMinutes + ' mins ' + timeSeconds + ' seconds')
+
+    let hours = String(timeHours).padStart(2, '0')
+    let minutes = String(timeMinutes).padStart(2, '0')
+    let seconds = String(timeSeconds).padStart(2, '0')
+
+    if (timeHours >= 60) {
+        console.log(hours + ':' + minutes + ':' + seconds)
+    } else {
+        console.log(minutes + ':' + seconds)
+    }
+
+    
 
     //Calculate Distance in Stop Function
    
@@ -90,12 +101,19 @@ function stop() {
     const newDistance = document.createElement('p')
     const newPace = document.createElement('p')
     const dateEntry = document.createTextNode(date.format('M/D/YYYY'))
-    const timeEntry = document.createTextNode(timeHours + ' hours ' + timeMinutes + ' mins ' + timeSeconds + ' seconds')
+    const timeEntry1 = document.createTextNode('Time: ' + hours + ':' + minutes + ':' + seconds)
+    const timeEntry2 = document.createTextNode('Time: ' + minutes + ':' + seconds)
     const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' miles')
     const paceEntry = document.createTextNode('Pace: ' + formatPaceMin + ':' + formatPaceSec)
 
     newDate.appendChild(dateEntry)
-    newTime.appendChild(timeEntry);
+
+    if (timeHours  >= 60) {
+        newTime.appendChild(timeEntry1)
+    } else {
+        newTime.appendChild(timeEntry2)
+    }
+    
     newDistance.appendChild(distanceEntry)
     newPace.appendChild(paceEntry)
 
@@ -111,7 +129,7 @@ function stop() {
 
     const runData  = {
         date: date.format('M/D/YYYY'),
-        time: timeHours + ' hours ' + timeMinutes + ' minutes and ' + timeSeconds + ' seconds',
+        time: hours + ':' + minutes + ':' + seconds,
         distance: totalDistance.toFixed(2) + ' miles',
         pace: formatPaceMin + ':' + formatPaceSec
     }
@@ -258,6 +276,7 @@ function filterRuns(filterType) {
 
     let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
     let filteredData = [];
+    savedRuns.reverse();
 
     let currentDate = dayjs()
     
