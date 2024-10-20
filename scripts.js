@@ -59,13 +59,11 @@ function stop() {
     let minutes = String(timeMinutes).padStart(2, '0')
     let seconds = String(timeSeconds).padStart(2, '0')
 
-    if (timeHours >= 60) {
-        console.log(hours + ':' + minutes + ':' + seconds)
-    } else {
-        console.log(minutes + ':' + seconds)
-    }
+    const formatTime = timeHours > 0
+    ? `${hours}:${minutes}:${seconds}` 
+    : `${minutes}:${seconds}`
 
-    
+    console.log("Time: " + formatTime)
 
     //Calculate Distance in Stop Function
    
@@ -129,7 +127,7 @@ function stop() {
 
     const runData  = {
         date: date.format('M/D/YYYY'),
-        time: hours + ':' + minutes + ':' + seconds,
+        time: formatTime,
         distance: totalDistance.toFixed(2) + ' miles',
         pace: formatPaceMin + ':' + formatPaceSec
     }
