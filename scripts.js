@@ -28,6 +28,7 @@ function start() {
     if (navigator.geolocation) {
         background.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
         modal.style.visibility = "visible";
+        background.style.visibility = "hidden"
         tracking = true;
         startRun = new Date();
         watchId = navigator.geolocation.watchPosition(success, error, options);
@@ -44,6 +45,7 @@ function stop() {
     finishRun = new Date();
     modal.style.visibility = "hidden"
     background.style.backgroundColor = ""
+    background.style.visibility = "visible"
 
     //Day.JS
     const date = dayjs();
