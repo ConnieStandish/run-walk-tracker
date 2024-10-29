@@ -16,6 +16,21 @@ h1 {
     max-width: 50%;
 }
 
+.header-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.start {
+    display: flex;
+    justify-content: center;
+}
+
+.start-btn {
+    margin-top: auto;
+}
+
 #map {
     height: 650px;
     width: 90%;
@@ -24,9 +39,9 @@ h1 {
     margin-top: 20px;
 }
 
-button {
+/* button {
     margin: 10px 15px 0 0;
-}
+} */
 
 #saved-data {
     font-family: sans-serif;
@@ -42,10 +57,10 @@ button {
     margin-top: 15px;
 }
 
-#data-filter {
+/* #data-filter {
     position: relative;
     float: right;
-}
+} */
 
 .data-content {
     display: none;
