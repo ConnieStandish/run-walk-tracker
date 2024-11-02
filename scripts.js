@@ -263,7 +263,7 @@ function loadRunData(runData) {
 function reset() {
     const allRuns = document.getElementById('display-runs')
     localStorage.clear()
-    alert("This will clear data")
+    confirm("This will clear all data. Are you sure?")
     if (true)
         localStorage.length === 0
         allRuns.innerHTML = "";
