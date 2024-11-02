@@ -96,15 +96,22 @@ function stop() {
     //Display Run Data
     const displayRuns = document.getElementById('display-runs')
     const newEntry = document.createElement('div')
+    const itemList = document.createElement('div')
     const newDate = document.createElement('p')
     const newTime = document.createElement('p')
+    const timeBox = document.createElement('p')
     const newDistance = document.createElement('p')
+    const distanceBox = document.createElement('p')
     const newPace = document.createElement('p')
+    const paceBox = document.createElement('p')
     const dateEntry = document.createTextNode(date.format('M/D/YYYY'))
-    const timeEntry1 = document.createTextNode('Time: ' + hours + ':' + minutes + ':' + seconds)
-    const timeEntry2 = document.createTextNode('Time: ' + minutes + ':' + seconds)
-    const distanceEntry = document.createTextNode('Total distance: ' + totalDistance.toFixed(2) +  ' miles')
-    const paceEntry = document.createTextNode('Pace: ' + formatPaceMin + ':' + formatPaceSec)
+    const timeEntry1 = document.createTextNode(hours + ':' + minutes + ':' + seconds)
+    const timeEntry2 = document.createTextNode(minutes + ':' + seconds)
+    const timeLabel = document.createTextNode('Time')
+    const distanceEntry = document.createTextNode(totalDistance.toFixed(2) +  ' miles')
+    const distanceLabel = document.createTextNode('Distance')
+    const paceEntry = document.createTextNode(formatPaceMin + ':' + formatPaceSec)
+    const paceLabel = document.createTextNode('Pace')
 
     newDate.appendChild(dateEntry)
 
@@ -113,14 +120,27 @@ function stop() {
     } else {
         newTime.appendChild(timeEntry2)
     }
+
+    // timeLabel.appendChild(timeBox)
     
     newDistance.appendChild(distanceEntry)
+
+    // distanceLabel.appendChild(distanceBox)
+
     newPace.appendChild(paceEntry)
 
+    // paceLabel.appendChild(paceBox)
+
     newEntry.appendChild(newDate)
-    newEntry.appendChild(newTime)
-    newEntry.appendChild(newDistance)
-    newEntry.appendChild(newPace)
+
+    itemList.appendChild(newTime)
+    itemList.appendChild(timeBox)
+    itemList.appendChild(newDistance)
+    itemList.appendChild(distanceBox)
+    itemList.appendChild(newPace)
+    itemList.appendChild(paceBox)
+
+    newEntry.appendChild(itemList)
 
     displayRuns.appendChild(newEntry)
 
@@ -227,7 +247,10 @@ function loadRunData(runData) {
 
         let runInfo = document.getElementById('saved-runs');
         let entry = document.createElement('div');
-        entry.innerHTML = `<p>${run.date}</p><p>Time: ${run.time}</p><p>Distance: ${run.distance}</p><p>Pace: ${run.pace}</p>`;
+        entry.innerHTML =   `<div class='date'><p>${run.date}</p></div>
+                            <div class='all-items'><div class='item'><p>${run.time}</p><p>Time</p></div>
+                            <div class='item'><p>${run.distance}</p><p>Distance</p></div>
+                            <div class='item'><p>${run.pace}</p><p>Pace</p></div></div>`;
 
 
         runInfo.appendChild(entry)

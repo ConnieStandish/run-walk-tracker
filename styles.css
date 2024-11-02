@@ -104,3 +104,21 @@ h1 {
 .show {
     display: block;
 }
+
+.all-items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    padding: 0 13px;
+    text-align: left;
+}
+
+.date {
+    padding-left: 10px;
+}
