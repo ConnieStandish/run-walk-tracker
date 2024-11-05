@@ -290,11 +290,13 @@ function loadRunData(runData) {
 
 function reset() {
     const allRuns = document.getElementById('display-runs')
-    localStorage.clear()
-    confirm("This will clear all data. Are you sure?")
-    if (true)
+
+    if (confirm("This will clear all data. Are you sure?")){
+        localStorage.clear()
         localStorage.length === 0
         allRuns.innerHTML = "";
+    }
+        
 }
 
 //Data Filter Menu
