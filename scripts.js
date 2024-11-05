@@ -80,7 +80,7 @@ function stop() {
 
     // const totalMin = timeHours * 60 + timeMinutes + timeSeconds / 60
 
-    const pace = totalMin / totalDistance.toFixed(2);
+    const pace = time / totalDistance.toFixed(2);
     const paceMin = Math.floor(pace);
     const paceSec = Math.round((pace - paceMin) * 60);
 
