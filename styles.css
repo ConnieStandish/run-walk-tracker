@@ -122,3 +122,11 @@ h1 {
 .date {
     padding-left: 10px;
 }
+
+p {
+    margin: 5px 0;
+}
+
+.entry {
+    margin-bottom: 30px;
+}
