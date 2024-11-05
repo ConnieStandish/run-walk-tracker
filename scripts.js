@@ -96,24 +96,47 @@ function stop() {
     //Display Run Data
     const displayRuns = document.getElementById('display-runs')
     const newEntry = document.createElement('div')
+
     const itemList = document.createElement('div')
+    itemList.setAttribute("class", "all-items")
+
+    const dateItem = document.createElement('div')
+    dateItem.setAttribute("class", "date")
+
+    const timeItem = document.createElement('div')
+    timeItem.setAttribute("class", "item")
+
+    const distanceItem = document.createElement('div')
+    distanceItem.setAttribute("class", "item")
+
+    const paceItem = document.createElement('div')
+    paceItem.setAttribute("class", "item")
+
     const newDate = document.createElement('p')
+
     const newTime = document.createElement('p')
     const timeBox = document.createElement('p')
+
     const newDistance = document.createElement('p')
     const distanceBox = document.createElement('p')
+
     const newPace = document.createElement('p')
     const paceBox = document.createElement('p')
+
     const dateEntry = document.createTextNode(date.format('M/D/YYYY'))
+
     const timeEntry1 = document.createTextNode(hours + ':' + minutes + ':' + seconds)
     const timeEntry2 = document.createTextNode(minutes + ':' + seconds)
     const timeLabel = document.createTextNode('Time')
+
     const distanceEntry = document.createTextNode(totalDistance.toFixed(2) +  ' miles')
     const distanceLabel = document.createTextNode('Distance')
+
     const paceEntry = document.createTextNode(formatPaceMin + ':' + formatPaceSec)
     const paceLabel = document.createTextNode('Pace')
 
     newDate.appendChild(dateEntry)
+    dateItem.appendChild(newDate)
 
     if (timeHours  >= 60) {
         newTime.appendChild(timeEntry1)
@@ -121,24 +144,26 @@ function stop() {
         newTime.appendChild(timeEntry2)
     }
 
-    // timeLabel.appendChild(timeBox)
+    timeBox.appendChild(timeLabel)
     
     newDistance.appendChild(distanceEntry)
-
-    // distanceLabel.appendChild(distanceBox)
+    distanceBox.appendChild(distanceLabel)
 
     newPace.appendChild(paceEntry)
+    paceBox.appendChild(paceLabel)
 
-    // paceLabel.appendChild(paceBox)
+    newEntry.appendChild(dateItem)
 
-    newEntry.appendChild(newDate)
+    timeItem.appendChild(newTime)
+    timeItem.appendChild(timeBox)
+    distanceItem.appendChild(newDistance)
+    distanceItem.appendChild(distanceBox)
+    paceItem.appendChild(newPace)
+    paceItem.appendChild(paceBox)
 
-    itemList.appendChild(newTime)
-    itemList.appendChild(timeBox)
-    itemList.appendChild(newDistance)
-    itemList.appendChild(distanceBox)
-    itemList.appendChild(newPace)
-    itemList.appendChild(paceBox)
+    itemList.appendChild(timeItem)
+    itemList.appendChild(distanceItem)
+    itemList.appendChild(paceItem)
 
     newEntry.appendChild(itemList)
 
