@@ -95,7 +95,9 @@ function stop() {
 
     //Display Run Data
     const displayRuns = document.getElementById('display-runs')
+    
     const newEntry = document.createElement('div')
+    newEntry.setAttribute("class", "entry")
 
     const itemList = document.createElement('div')
     itemList.setAttribute("class", "all-items")
@@ -272,6 +274,7 @@ function loadRunData(runData) {
 
         let runInfo = document.getElementById('saved-runs');
         let entry = document.createElement('div');
+        entry.setAttribute("class", "entry")
         entry.innerHTML =   `<div class='date'><p>${run.date}</p></div>
                             <div class='all-items'><div class='item'><p>${run.time}</p><p>Time</p></div>
                             <div class='item'><p>${run.distance}</p><p>Distance</p></div>
