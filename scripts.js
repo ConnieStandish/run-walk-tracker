@@ -78,7 +78,7 @@ function stop() {
 
     //Calculate Pace
 
-    const totalMin = timeHours * 60 + timeMinutes + timeSeconds / 60
+    // const totalMin = timeHours * 60 + timeMinutes + timeSeconds / 60
 
     const pace = totalMin / totalDistance.toFixed(2);
     const paceMin = Math.floor(pace);
