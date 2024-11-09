@@ -9,8 +9,21 @@ main {
     flex: 1;
 }
 
-h1 {
+.logo {
     text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-family: brother-1816, sans-serif;
+    font-size: 3.3em;
+}
+
+h2 {
+    margin: 0;
+    font-family: forma-djr-micro, sans-serif;
+    font-weight: 400;
+    font-size: 3.2em;
 }
 
 #all-data {
