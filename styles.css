@@ -81,6 +81,11 @@ main {
     border: none;
 }
 
+footer {
+    position: sticky;
+    bottom: 0;
+}
+
 #save-data {
     background-color: blue;
     color: white;
