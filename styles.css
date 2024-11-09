@@ -38,10 +38,17 @@ h1 {
 .start {
     display: flex;
     justify-content: center;
+    margin: 20px 0px;
 }
 
 .start-btn {
-    margin-top: auto;
+    /* margin-top: auto; */
+    background-color: blue;
+    color: white;
+    border-radius: 50%;
+    font-size: 50px;
+    padding: 13px 24px;
+    border: none;
 }
 
 #map {
