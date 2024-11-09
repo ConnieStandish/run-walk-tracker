@@ -9,20 +9,16 @@ main {
     flex: 1;
 }
 
-.logo {
+/* .logo {
     text-align: center;
+} */
+
+.logo-vertical img {
+    max-width: 100%;
 }
 
-h1 {
-    margin: 0;
-    font-family: brother-1816, sans-serif;
-    font-size: 3.3em;
-}
-
-h2 {
-    margin: 0;
-    font-weight: 400;
-    font-size: 3.2em;
+.logo-vertical {
+    margin: 0 20px;
 }
 
 #all-data {
@@ -30,7 +26,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 36px;
 }
 
 /* #display-runs {
@@ -45,7 +41,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 6px;
 }
 
 .reset-btn, .filter {
