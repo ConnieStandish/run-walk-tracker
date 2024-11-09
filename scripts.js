@@ -367,8 +367,12 @@ function displayFilteredRuns(savedRuns) {
     savedRuns.forEach(run=>{
     
         const entry = document.createElement('div')
+        entry.setAttribute("class", "entry")
         
-        entry.innerHTML = `<p>${run.date}</p><p>Time: ${run.time}</p><p>Distance: ${run.distance}</p><p>Pace: ${run.pace}</p>`;
+        entry.innerHTML = `<div class='date'><p>${run.date}</p></div>
+                            <div class='all-items'><div class='item'><p>${run.time}</p><p>Time</p></div>
+                            <div class='item'><p>${run.distance}</p><p>Distance</p></div>
+                            <div class='item'><p>${run.pace}</p><p>Pace</p></div></div>`;
         
         runList.appendChild(entry)
     })
