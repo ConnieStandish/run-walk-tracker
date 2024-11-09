@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: forma-djr-micro, sans-serif;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -21,7 +21,6 @@ h1 {
 
 h2 {
     margin: 0;
-    font-family: forma-djr-micro, sans-serif;
     font-weight: 400;
     font-size: 3.2em;
 }
@@ -46,6 +45,18 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 20px;
+}
+
+.reset-btn, .filter {
+    font-family: forma-djr-micro;
+    font-size: 17px;
+    font-weight: 700;
+    background-color: blue;
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px;
+    border: none;
 }
 
 .start {
@@ -116,15 +127,21 @@ h2 {
     display: none;
     position: absolute;
     z-index: 1;
+    background-color: blue;
+    border-radius: 0 8px 8px 8px;
+    padding-top: 6px;
+    margin-left: 7px;
 }
 
 .data-content p {
     display: block;
+    padding: 8px 0px;
 }
 
 .data-content p a {
-    color: black;
+    color: white;
     text-decoration: none;
+    padding: 15px;
 }
 
 .show {
@@ -136,6 +153,7 @@ h2 {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    font-size: 17px;
 }
 
 .item {
@@ -147,6 +165,8 @@ h2 {
 
 .date {
     padding-left: 10px;
+    font-size: 1.8em;
+    font-weight: 700;
 }
 
 p {
@@ -155,4 +175,7 @@ p {
 
 .entry {
     margin-bottom: 30px;
+    background-color: lightgrey;
+    border-radius: 10px;
+    padding: 6px;
 }
