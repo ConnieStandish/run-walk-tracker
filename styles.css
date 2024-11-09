@@ -52,11 +52,8 @@ h1 {
 }
 
 #map {
-    height: 650px;
-    /* width: 90%;
-    margin: 0 auto;
-    padding-bottom: 20px;
-    margin-top: 20px; */
+    height: 550px;
+    bottom: 80px;
 }
 
 #modal-content {
@@ -67,7 +64,7 @@ h1 {
 .track-btns {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: -40px;
 }
 
 /* button {
