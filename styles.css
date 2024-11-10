@@ -91,10 +91,10 @@ footer {
 }
 
 #save-data {
-    background-color: blue;
-    color: white;
+    background-color: #41667a;
+    color: #dcd7d5;
     border-radius: 25%;
-    font-size: 55px;
+    font-size: 56px;
     padding: 10px 20px;
     border: none;
 }
