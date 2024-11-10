@@ -257,3 +257,11 @@ p {
         padding: 12px 23px;
     }
 }
+
+/******* Min-Width 1600px ********/
+
+@media(min-width: 1600px) {
+    .header-btns {
+        margin: 0 19%;
+    }
+}
