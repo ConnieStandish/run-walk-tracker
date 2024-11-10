@@ -221,3 +221,34 @@ p {
         margin: 0 40px;
     }
 }
+
+/******* Min-Width 675px ********/
+
+@media(min-width: 675px) {
+    .logo-horizontal img {
+        width: 642px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .date {
+        font-size: 2.1em;
+    }
+
+    .all-items {
+        font-size: 22px;
+    }
+
+    .reset-btn, .filter {
+        font-size: 22px;
+    }
+
+    .entry {
+        padding: 8px 15px;
+    }
+
+    button.start-btn {
+        padding: 19px 32px;
+        font-size: 60px;
+    }
+}
