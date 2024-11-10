@@ -130,7 +130,7 @@ footer {
 #modal-wrapper {
     visibility: hidden;
     width: 80%;
-    height: 80%;
+    height: 650px;
     position: fixed;
     /* outline: solid;
     margin-top: 15px; */
