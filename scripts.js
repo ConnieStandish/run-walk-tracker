@@ -140,7 +140,7 @@ function stop() {
     const distanceEntry = document.createTextNode(totalDistance.toFixed(2) +  ' miles')
     const distanceLabel = document.createTextNode('Distance')
 
-    const paceEntry = document.createTextNode(formatPaceMin + ':' + formatPaceSec)
+    const paceEntry = document.createTextNode(formatPaceMin + ':' + formatPaceSec + ' /mile')
     const paceLabel = document.createTextNode('Pace')
 
     newDate.appendChild(dateEntry)
@@ -184,7 +184,7 @@ function stop() {
         date: date.format('M/D/YYYY'),
         time: formatTime,
         distance: totalDistance.toFixed(2) + ' miles',
-        pace: formatPaceMin + ':' + formatPaceSec
+        pace: formatPaceMin + ':' + formatPaceSec + ' /mile'
     }
 
     savedRuns.push(runData);
