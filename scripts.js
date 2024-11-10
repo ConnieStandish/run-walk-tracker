@@ -119,12 +119,15 @@ function stop() {
 
     const newTime = document.createElement('p')
     const timeBox = document.createElement('p')
+    timeBox.setAttribute("class", "label")
 
     const newDistance = document.createElement('p')
     const distanceBox = document.createElement('p')
+    distanceBox.setAttribute("class", "label")
 
     const newPace = document.createElement('p')
     const paceBox = document.createElement('p')
+    paceBox.setAttribute("class", "label")
 
     const dateEntry = document.createTextNode(date.format('M/D/YYYY'))
 
@@ -277,9 +280,9 @@ function loadRunData(runData) {
         let entry = document.createElement('div');
         entry.setAttribute("class", "entry")
         entry.innerHTML =   `<div class='date'><p>${run.date}</p></div>
-                            <div class='all-items'><div class='item'><p>${run.time}</p><p>Time</p></div>
-                            <div class='item'><p>${run.distance}</p><p>Distance</p></div>
-                            <div class='item'><p>${run.pace}</p><p>Pace</p></div></div>`;
+                            <div class='all-items'><div class='item'><p>${run.time}</p><p class='label'>Time</p></div>
+                            <div class='item'><p>${run.distance}</p><p class='label'>Distance</p></div>
+                            <div class='item'><p>${run.pace}</p><p class='label'>Pace</p></div></div>`;
 
 
         runInfo.appendChild(entry)
@@ -370,10 +373,10 @@ function displayFilteredRuns(savedRuns) {
         entry.setAttribute("class", "entry")
         
         entry.innerHTML = `<div class='date'><p>${run.date}</p></div>
-                            <div class='all-items'><div class='item'><p>${run.time}</p><p>Time</p></div>
-                            <div class='item'><p>${run.distance}</p><p>Distance</p></div>
-                            <div class='item'><p>${run.pace}</p><p>Pace</p></div></div>`;
-        
+                            <div class='all-items'><div class='item'><p>${run.time}</p><p class='label'>Time</p></div>
+                            <div class='item'><p>${run.distance}</p><p class='label'>Distance</p></div>
+                            <div class='item'><p>${run.pace}</p><p class='label'>Pace</p></div></div>`;
+
         runList.appendChild(entry)
     })
     
