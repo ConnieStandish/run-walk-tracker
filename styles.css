@@ -9,10 +9,6 @@ main {
     flex: 1;
 }
 
-/* .logo {
-    text-align: center;
-} */
-
 .logo-vertical img {
     width: 100%;
     max-width: 2550px;
@@ -34,14 +30,6 @@ main {
     margin-top: 36px;
 }
 
-/* #display-runs {
-    margin: 0 0 -15px 30px;
-} */
-
-/* #display-runs, #saved-runs {
-    max-width: 100%;
-} */
-
 .header-btns {
     display: flex;
     flex-direction: row;
@@ -59,24 +47,13 @@ main {
     border-radius: 8px;
 }
 
-/* .filter {
-    border-radius: 8px 8px 0 0;
-} */
-
-/* .reset-btn {
-    border-radius: 8px;
-} */
-
-
-
 .start {
     display: flex;
     justify-content: center;
-    margin: 20px 0px;
+    margin-bottom: 20px;
 }
 
 .start-btn {
-    /* margin-top: auto; */
     background-color: #41667a;
     color: #dcd7d5;
     border-radius: 50%;
@@ -101,7 +78,6 @@ footer {
 
 #map {
     height: 550px;
-    /* bottom: 80px; */
 }
 
 #modal-content {
@@ -117,28 +93,12 @@ footer {
     margin: 40px 0 -75px 0;
 }
 
-/* button {
-    margin: 10px 15px 0 0;
-} */
-
-/* #saved-data {
-    font-family: sans-serif;
-    font-size: 1.1em;
-} */
-
 #modal-wrapper {
     visibility: hidden;
     width: 80%;
     height: 600px;
     position: fixed;
-    /* outline: solid;
-    margin-top: 15px; */
 }
-
-/* #data-filter {
-    position: relative;
-    float: right;
-} */
 
 .data-content {
     display: none;
@@ -185,18 +145,23 @@ footer {
     padding-left: 10px;
     font-size: 1.8em;
     font-weight: 700;
+    margin-bottom: 8px;
 }
 
 p {
-    margin: 5px 0;
+    margin: 5px 0 -5px 0;
     color: #2d2928;
+}
+
+.label {
+    font-size: 14px;
 }
 
 .entry {
     margin-bottom: 30px;
     background-color: #dcd7d5;
     border-radius: 10px;
-    padding: 6px;
+    padding: 14px 0;
 }
 
 /******* Min-Width 510px ********/
@@ -257,6 +222,19 @@ p {
     #save-data {
         font-size: 63px;
         padding: 12px 23px;
+    }
+
+    .data-content p {
+        padding: 10px 5.5px;
+    }
+}
+
+/******* Min-Width 1150px ********/
+@media(min-width: 1150px) {
+    div#map {
+        width: 900px;
+        display: block;
+        margin: 0 auto;
     }
 }
 
