@@ -26,7 +26,7 @@ const options = {
 
 function start() {
     if (navigator.geolocation) {
-        background.style.backgroundColor = "rgb(45, 41, 40)"
+        // background.style.backgroundColor = "rgb(45, 41, 40)"
         modal.style.visibility = "visible";
         background.style.visibility = "hidden"
         tracking = true;
