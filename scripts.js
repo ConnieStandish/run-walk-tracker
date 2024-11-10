@@ -378,3 +378,17 @@ function displayFilteredRuns(savedRuns) {
     })
     
 }
+
+// Random Background Image
+
+var bkgChange = document.getElementById('randomImg')
+
+images = ['images/pic-1.jpg', 'images/pic-2.jpg', 'images/pic-3.jpg']
+
+var imgCount = images.length
+
+var imgNumber = Math.floor(Math.random() * imgCount);
+
+window.onload = function() {
+    bkgChange.style.backgroundImage = 'url('+images[imgNumber]+')'
+}
