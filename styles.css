@@ -101,7 +101,7 @@ footer {
 
 #map {
     height: 550px;
-    bottom: 80px;
+    /* bottom: 80px; */
 }
 
 #modal-content {
@@ -114,7 +114,7 @@ footer {
 .track-btns {
     display: flex;
     justify-content: center;
-    margin: -70px 0 -48px 0;
+    margin: 40px 0 -75px 0;
 }
 
 /* button {
