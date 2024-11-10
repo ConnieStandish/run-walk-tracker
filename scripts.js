@@ -26,7 +26,8 @@ const options = {
 
 function start() {
     if (navigator.geolocation) {
-        // background.style.backgroundColor = "rgb(45, 41, 40)"
+        bkgChange.style.backgroundImage = ""
+        background.style.backgroundColor = "rgb(45, 41, 40)"
         modal.style.visibility = "visible";
         background.style.visibility = "hidden"
         tracking = true;
@@ -44,6 +45,7 @@ function stop() {
     tracking = false;
     finishRun = new Date();
     modal.style.visibility = "hidden"
+    bkgChange.style.backgroundImage = 'url('+images[imgNumber]+')'
     background.style.backgroundColor = ""
     background.style.visibility = "visible"
 
@@ -98,7 +100,7 @@ function stop() {
     const displayRuns = document.getElementById('display-runs')
     
     const newEntry = document.createElement('div')
-    newEntry.setAttribute("class", "entry")
+    newEntry.setAttribute("class", "entry new-entry")
 
     const itemList = document.createElement('div')
     itemList.setAttribute("class", "all-items")

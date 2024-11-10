@@ -15,7 +15,7 @@ main {
 }
 
 .logo-vertical {
-    margin: 0 20px;
+    margin: 20px;
 }
 
 .logo-horizontal {
@@ -164,6 +164,10 @@ p {
     padding: 14px 0;
 }
 
+.new-entry {
+    padding: 14px 10px;
+}
+
 /******* Min-Width 510px ********/
 
 @media(min-width: 510px) {
@@ -185,7 +189,7 @@ p {
     }
 
     .header-btns {
-        margin: 0 40px;
+        margin: 10px 0;
     }
 }
 
@@ -208,6 +212,7 @@ p {
 
     .reset-btn, .filter {
         font-size: 22px;
+        padding: 10px 32.7px;
     }
 
     .entry {
@@ -225,7 +230,7 @@ p {
     }
 
     .data-content p {
-        padding: 10px 5.5px;
+        padding: 10px 4.5px;
     }
 }
 
@@ -242,6 +247,6 @@ p {
 
 @media(min-width: 1600px) {
     .header-btns {
-        margin: 0 19%;
+        margin: 0 16%;
     }
 }
