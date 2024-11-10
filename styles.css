@@ -40,17 +40,16 @@ main {
 .header-btns {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin-top: 6px;
+    justify-content: space-evenly;
 }
 
 .reset-btn, .filter {
     font-family: forma-djr-micro;
     font-size: 17px;
     font-weight: 700;
-    background-color: blue;
-    color: white;
-    padding: 10px 32px;
+    background-color: #41667a;
+    color: #dcd7d5;
+    padding: 10px 34px;
     border: none;
     border-radius: 8px;
 }
@@ -73,8 +72,8 @@ main {
 
 .start-btn {
     /* margin-top: auto; */
-    background-color: blue;
-    color: white;
+    background-color: #41667a;
+    color: #dcd7d5;
     border-radius: 50%;
     font-size: 50px;
     padding: 13px 24px;
@@ -138,7 +137,7 @@ footer {
     display: none;
     position: absolute;
     z-index: 1;
-    background-color: blue;
+    background-color: #41667a;
     border-radius: 0 0 8px 8px;
     padding-top: 6px;
     margin-top: -5px;
@@ -150,9 +149,10 @@ footer {
 }
 
 .data-content p a {
-    color: white;
+    color: #dcd7d5;
     text-decoration: none;
     padding: 15px;
+    font-size: 17px;
 }
 
 .show {
@@ -182,11 +182,12 @@ footer {
 
 p {
     margin: 5px 0;
+    color: #2d2928;
 }
 
 .entry {
     margin-bottom: 30px;
-    background-color: lightgrey;
+    background-color: #dcd7d5;
     border-radius: 10px;
     padding: 6px;
 }
