@@ -107,15 +107,14 @@ footer {
 #modal-content {
     position: absolute;
     width: 100%;
-    left: 30px;
-    bottom: 30px;
+    left: 10%;
+    bottom: 30%;
 }
 
 .track-btns {
-    margin-top: -40px;
-    position: relative;
-    bottom: 31px;
-    left: 100px;
+    display: flex;
+    justify-content: center;
+    margin: -70px 0 -48px 0;
 }
 
 /* button {
@@ -130,7 +129,7 @@ footer {
 #modal-wrapper {
     visibility: hidden;
     width: 80%;
-    height: 650px;
+    height: 600px;
     position: fixed;
     /* outline: solid;
     margin-top: 15px; */
