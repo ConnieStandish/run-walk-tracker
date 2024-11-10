@@ -251,4 +251,9 @@ p {
         padding: 19px 32px;
         font-size: 60px;
     }
+
+    #save-data {
+        font-size: 63px;
+        padding: 12px 23px;
+    }
 }
