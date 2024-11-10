@@ -14,11 +14,16 @@ main {
 } */
 
 .logo-vertical img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 2550px;
 }
 
 .logo-vertical {
     margin: 0 20px;
+}
+
+.logo-horizontal {
+    display: none;
 }
 
 #all-data {
@@ -190,4 +195,29 @@ p {
     background-color: #dcd7d5;
     border-radius: 10px;
     padding: 6px;
+}
+
+/******* Min-Width 510px ********/
+
+@media(min-width: 510px) {
+    .logo-vertical img {
+        display: none;
+    }
+
+    .logo-horizontal {
+        display: block;
+    }
+
+    .logo-horizontal img {
+        width: 100%;
+        max-width: 3300px;
+    }
+
+    .date {
+        font-size: 2em;
+    }
+
+    .header-btns {
+        margin: 0 40px;
+    }
 }
