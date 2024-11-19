@@ -399,3 +399,32 @@ var imgNumber = Math.floor(Math.random() * imgCount);
 window.onload = function() {
     bkgChange.style.backgroundImage = 'url('+images[imgNumber]+')'
 }
+
+//Load More Button
+function loadMore() {
+    let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
+
+    const loadBtn = document.getElementById("load-more")
+
+    const runList = document.getElementById('saved-runs')
+
+    const currentIndex = 7;
+
+    savedRuns.forEach(run=> {
+        for (var i = currentIndex; i < currentIndex + 1; i++){
+            if(currentIndex >= localStorage.length){
+                loadBtn.style.display = 'none'
+            }
+            
+            const entry = document.createElement('div')
+            entry.setAttribute("class", "entry")
+            
+            entry.innerHTML = `<div class='date'><p>${run.date}</p></div>
+                                <div class='all-items'><div class='item'><p>${run.time}</p><p class='label'>Time</p></div>
+                                <div class='item'><p>${run.distance}</p><p class='label'>Distance</p></div>
+                                <div class='item'><p>${run.pace}</p><p class='label'>Pace</p></div></div>`;
+    
+            runList.appendChild(entry)
+        }
+    })
+}
