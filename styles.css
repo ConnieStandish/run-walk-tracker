@@ -42,6 +42,12 @@ main {
 #load-more {
     position: absolute;
     bottom: 0;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    width: 12%;
+    background-color: #dcd7d5;
+    color: #273b44;
 }
 
 .header-btns {
