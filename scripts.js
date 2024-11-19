@@ -272,6 +272,8 @@ function loadRunData(runData) {
 
     savedRuns.reverse();
 
+    savedRuns = savedRuns.slice(0, 7);
+
     savedRuns.forEach(run=>{
         for (var i = 0; i < localStorage.length; i++){
             let data = document.createElement('p')
