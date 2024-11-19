@@ -35,6 +35,15 @@ main {
     margin-top: 36px;
 }
 
+#saved-runs {
+    position: relative;
+}
+
+#load-more {
+    position: absolute;
+    bottom: 0;
+}
+
 .header-btns {
     display: flex;
     flex-direction: row;
