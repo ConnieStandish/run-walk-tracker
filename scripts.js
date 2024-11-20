@@ -267,32 +267,41 @@ function resetMap() {
 
 //Display Data
 
+let currentIndex = 0;
+const batchSize = 3;
+
 function loadRunData(runData) {
     let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
 
-    savedRuns.reverse();
-
-    savedRuns = savedRuns.slice(0, 7);
-
-    savedRuns.forEach(run=>{
-        for (var i = 0; i < localStorage.length; i++){
-            let data = document.createElement('p')
-            data.append(localStorage.getItem(localStorage.key(i)))
-        }
-
-        let runInfo = document.getElementById('saved-runs');
-        let entry = document.createElement('div');
-        entry.setAttribute("class", "entry")
-        entry.innerHTML =   `<div class='date'><p>${run.date}</p></div>
-                            <div class='all-items'><div class='item'><p>${run.time}</p><p class='label'>Time</p></div>
-                            <div class='item'><p>${run.distance}</p><p class='label'>Distance</p></div>
-                            <div class='item'><p>${run.pace}</p><p class='label'>Pace</p></div></div>`;
-
-
-        runInfo.appendChild(entry)
-    });
-
+    loadMore();
 }
+
+// function loadRunData(runData) {
+//     let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
+
+//     savedRuns.reverse();
+
+//     savedRuns = savedRuns.slice(0, 7);
+
+//     savedRuns.forEach(run=>{
+//         for (var i = 0; i < localStorage.length; i++){
+//             let data = document.createElement('p')
+//             data.append(localStorage.getItem(localStorage.key(i)))
+//         }
+
+//         let runInfo = document.getElementById('saved-runs');
+//         let entry = document.createElement('div');
+//         entry.setAttribute("class", "entry")
+//         entry.innerHTML =   `<div class='date'><p>${run.date}</p></div>
+//                             <div class='all-items'><div class='item'><p>${run.time}</p><p class='label'>Time</p></div>
+//                             <div class='item'><p>${run.distance}</p><p class='label'>Distance</p></div>
+//                             <div class='item'><p>${run.pace}</p><p class='label'>Pace</p></div></div>`;
+
+
+//         runInfo.appendChild(entry)
+//     });
+
+// }
 
 //Reset Button
 
@@ -408,23 +417,28 @@ function loadMore() {
 
     const runList = document.getElementById('saved-runs')
 
-    const currentIndex = 7;
+    for (let i = currentIndex; i < currentIndex + batchSize; i++) {
+        if (i >= savedRuns.length) break;
 
-    savedRuns.forEach(run=> {
-        for (var i = currentIndex; i < currentIndex + 1; i++){
-            if(currentIndex >= localStorage.length){
-                loadBtn.style.display = 'none'
-            }
-            
-            const entry = document.createElement('div')
-            entry.setAttribute("class", "entry")
-            
-            entry.innerHTML = `<div class='date'><p>${run.date}</p></div>
+        const run = savedRuns[i];
+
+        const entry = document.createElement('div')
+        entry.setAttribute("class", "entry")
+
+        entry.innerHTML = `<div class='date'><p>${run.date}</p></div>
                                 <div class='all-items'><div class='item'><p>${run.time}</p><p class='label'>Time</p></div>
                                 <div class='item'><p>${run.distance}</p><p class='label'>Distance</p></div>
                                 <div class='item'><p>${run.pace}</p><p class='label'>Pace</p></div></div>`;
     
             runList.appendChild(entry)
-        }
-    })
+    }
+
+    currentIndex += batchSize;
+
+    if (currentIndex >= savedRuns.length) {
+        loadBtn.style.display = 'none';
+        return;
+    }
+                       
+            
 }
