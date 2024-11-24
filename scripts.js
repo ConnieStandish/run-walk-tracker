@@ -273,6 +273,11 @@ const batchSize = 3;
 function loadRunData(runData) {
     let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
 
+    // savedRuns.sort((a, b) => {
+    //     return new Date(b.date) - new Date(a.date)
+    // });
+
+
     loadMore();
 }
 
@@ -412,6 +417,8 @@ window.onload = function() {
 //Load More Button
 function loadMore() {
     let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
+
+    savedRuns.reverse();
 
     const loadBtn = document.getElementById("load-more")
 
