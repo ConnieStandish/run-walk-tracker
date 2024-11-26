@@ -48,7 +48,10 @@
     <main>
         <div id="modal-wrapper">
             <div id="modal-content">
-                <div id="map"></div>
+                <div class="map-wrapper">
+                    <div id="modal-close" onclick="closeMap()">&times;</div>
+                    <div id="map"></div>
+                </div>
                 <div class="track-btns">
                     <button id="save-data" onclick="stop()"><i class="fa-solid fa-stop"></i></button>
                 </div>

@@ -195,6 +195,14 @@ function stop() {
 
 document.addEventListener('DOMContentLoaded', loadRunData);
 
+//Close map window if user clicks close
+function closeMap() {
+    modal.style.visibility = "hidden";
+    bkgChange.style.backgroundImage = 'url('+images[imgNumber]+')'
+    background.style.backgroundColor = ""
+    background.style.visibility = "visible"
+}
+
 function success(position) {
     //If tracking is not active, then exit.
     if (!tracking) return;
