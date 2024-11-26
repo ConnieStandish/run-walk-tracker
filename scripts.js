@@ -311,9 +311,9 @@ window.onclick = function(event) {
     }
 }
 
-document.getElementById("content").addEventListener('click', function(event){
-    event.stopPropagation();
-})
+// document.getElementById("content").addEventListener('click', function(event){
+//     event.stopPropagation();
+// })
 
 function filterRuns(filterType) {
 
