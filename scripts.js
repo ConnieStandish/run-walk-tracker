@@ -417,3 +417,10 @@ function loadMore() {
                        
             
 }
+
+//To Do:
+//1. Ensure filter menu closes upon option selection
+//2. Create close button for map modal
+//3. Check color contrasts
+//4. Resize images
+//5. Create share button?
