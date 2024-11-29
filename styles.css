@@ -20,7 +20,7 @@ main {
 }
 
 .logo-vertical {
-    margin: 20px;
+    margin: 20px 15px 5px;
 }
 
 .logo-horizontal {
@@ -47,7 +47,7 @@ main {
     border-radius: 10px;
     width: 12%;
     background-color: #dcd7d5;
-    color: #273b44;
+    color: #2d2928;
 }
 
 .header-btns {
@@ -60,7 +60,7 @@ main {
     font-family: forma-djr-micro;
     font-size: 17px;
     font-weight: 700;
-    background-color: #41667a;
+    background-color: #0a3d28;
     color: #dcd7d5;
     padding: 10px 34px;
     border: none;
@@ -74,12 +74,12 @@ main {
 }
 
 .start-btn {
-    background-color: #41667a;
-    color: #dcd7d5;
+    background-color: #dcd7d5;
+    color: #0a3d28;
     border-radius: 50%;
     font-size: 50px;
     padding: 13px 24px;
-    border: none;
+    border: solid #82878f;
 }
 
 footer {
@@ -88,12 +88,12 @@ footer {
 }
 
 #save-data {
-    background-color: #41667a;
-    color: #dcd7d5;
+    background-color: #dcd7d5;
+    color: #41667a;
     border-radius: 25%;
     font-size: 60px;
     padding: 5px 15px;
-    border: none;
+    border: solid #82878f;
 }
 
 #map {
@@ -104,7 +104,7 @@ footer {
     position: absolute;
     width: 100%;
     left: 10%;
-    bottom: 27%;
+    bottom: 25%;
 }
 
 .track-btns {
@@ -132,9 +132,9 @@ footer {
     display: none;
     position: absolute;
     z-index: 1;
-    background-color: #41667a;
+    background-color: #0a3d28;
     border-radius: 0 0 8px 8px;
-    padding-top: 6px;
+    padding: 10px 0;
     margin-top: -5px;
 }
 
