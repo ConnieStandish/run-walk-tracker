@@ -11,6 +11,10 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
+    <link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
+
     <script src="https://kit.fontawesome.com/4f19959d2d.js" crossorigin="anonymous"></script>
 
     <title>RunWalk Fitness Tracker</title>
@@ -19,21 +23,21 @@
 <body class="bkg-img" id="randomImg">
     <header>
         <div class="logo-vertical">
-            <img src="images/vertical-logo.png" alt="vertical logo">
+            <img src="images/vertical-logo-1.png" alt="vertical logo">
         </div>
 
         <div class="logo-horizontal">
-            <img src="images/horizontal-logo.png" alt="horizontal logo">
+            <img src="images/horizontal-logo-1.png" alt="horizontal logo">
         </div>
         
         <div class="header-btns">
 
             <div class="reset">
-                <button class="reset-btn" onclick="reset()">Reset</button>
+                <button name="clear" class="reset-btn" onclick="reset()">Reset</button>
             </div>
         
             <div id="data-filter">
-                <button class="filter" onclick="dataFilterTool()">Filter</button>
+                <button name="filter by days" class="filter" onclick="dataFilterTool()">Filter</button>
                 <div id="content" class="data-content">
                     <p><a href="#" onclick="filterRuns('today')">Today</a></p>
                     <p><a href="#" onclick="filterRuns('last14')">14 Days</a></p>
@@ -53,7 +57,7 @@
                     <div id="map"></div>
                 </div>
                 <div class="track-btns">
-                    <button id="save-data" onclick="stop()"><i class="fa-solid fa-stop"></i></button>
+                    <button name="stop" id="save-data" onclick="stop()"><i class="fa-solid fa-stop"></i></button>
                 </div>
             </div>
         </div>
@@ -61,7 +65,7 @@
         <div id="all-data">
             <div id="display-runs"></div>
             <div id="saved-runs">
-                <button id="load-more" onclick="loadMore()"><i class="fa-solid fa-angle-down"></i></button>
+                <button name="load more" id="load-more" onclick="loadMore()"><i class="fa-solid fa-angle-down"></i></button>
             </div>
         </div>
 
@@ -69,7 +73,7 @@
 
     <footer>
         <div class="start">
-            <button class="start-btn" onclick="start()"><i class="fa-solid fa-play"></i></button>
+            <button name="start" class="start-btn" onclick="start()"><i class="fa-solid fa-play"></i></button>
         </div>
     </footer>
     
