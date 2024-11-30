@@ -16,11 +16,11 @@ main {
 
 .logo-vertical img {
     width: 100%;
-    max-width: 2550px;
+    /* max-width: 2550px; */
 }
 
 .logo-vertical {
-    margin: 20px 15px 5px;
+    margin: 20px;
 }
 
 .logo-horizontal {
@@ -205,11 +205,12 @@ p {
 
     .logo-horizontal {
         display: block;
+        margin-bottom: 30px;
     }
 
     .logo-horizontal img {
         width: 100%;
-        max-width: 3300px;
+        /* max-width: 3300px; */
     }
 
     .date {
