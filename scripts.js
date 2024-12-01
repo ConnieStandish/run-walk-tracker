@@ -81,7 +81,6 @@ function stop() {
     //Calculate Pace
 
     const totalMin = time / 60;
-    // const totalMin = timeHours * 60 + timeMinutes + timeSeconds / 60;
     const pace = totalMin / totalDistance;
     const paceMin = Math.floor(pace);
     const paceSec = Math.round((pace - paceMin) * 60);
@@ -320,10 +319,6 @@ window.onclick = function(event) {
     }
 }
 
-// document.getElementById("content").addEventListener('click', function(event){
-//     event.stopPropagation();
-// })
-
 function filterRuns(filterType) {
 
     let savedRuns = localStorage.getItem('runs') ? JSON.parse(localStorage.getItem('runs')) : [];
@@ -426,10 +421,3 @@ function loadMore() {
                        
             
 }
-
-//To Do:
-//1. Ensure filter menu closes upon option selection
-//2. Create close button for map modal
-//3. Check color contrasts
-//4. Resize images
-//5. Create share button?
