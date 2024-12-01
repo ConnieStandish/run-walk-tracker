@@ -16,7 +16,6 @@ main {
 
 .logo-vertical img {
     width: 100%;
-    /* max-width: 2550px; */
 }
 
 .logo-vertical {
@@ -210,7 +209,6 @@ p {
 
     .logo-horizontal img {
         width: 100%;
-        /* max-width: 3300px; */
     }
 
     .date {
@@ -226,7 +224,7 @@ p {
 
 @media(min-width: 675px) {
     .logo-horizontal img {
-        width: 642px;
+        width: 600px;
         margin: 0 auto;
         display: block;
     }
