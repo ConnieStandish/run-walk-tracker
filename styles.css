@@ -96,7 +96,7 @@ footer {
 }
 
 #map {
-    height: 525px;
+    height: 510px;
 }
 
 #modal-content {
@@ -124,7 +124,7 @@ footer {
     cursor: pointer;
     display: flex;
     justify-content: flex-end;
-    font-size: 30px;
+    font-size: 1.7em;
 }
 
 .data-content {
@@ -220,9 +220,17 @@ p {
     }
 }
 
-/******* Min-Width 675px ********/
+/******* Min-Width 540px ********/
 
-@media(min-width: 675px) {
+@media(min-width: 540px) {
+    #modal-content {
+        bottom: 31%;
+    }
+}
+
+/******* Min-Width 650px ********/
+
+@media(min-width: 650px) {
     .logo-horizontal img {
         width: 600px;
         margin: 0 auto;
@@ -259,15 +267,45 @@ p {
     .data-content p {
         padding: 10px 4.5px;
     }
+
+    #modal-content {
+        left: 11.2%;
+    }
+}
+
+/******* Min-Width 750px ********/
+@media(min-width: 750px) {
+    .map-wrapper {
+        width: 600px;
+        margin: 0 auto;
+    }
+}
+
+
+/******* Min-Width 1024px ********/
+@media(min-width: 1024px) {
+    #map {
+        height: 450px;
+    }
+
+    #modal-content {
+        bottom: 48.2%;
+    }
+
+    #save-data {
+        padding: 5px 15px;
+    }
 }
 
 /******* Min-Width 1150px ********/
 @media(min-width: 1150px) {
     .map-wrapper {
         width: 900px;
-        margin: 0 auto;
     }
 
+    #modal-content {
+        bottom: 35%;
+    }
 }
 
 /******* Min-Width 1600px ********/
