@@ -293,6 +293,7 @@ function reset() {
         localStorage.clear()
         localStorage.length === 0
         allRuns.innerHTML = "";
+        window.location.reload();
     }
         
 }
