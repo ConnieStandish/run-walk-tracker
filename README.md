@@ -21,4 +21,16 @@ The Run/Walk Tracker is a web application that will track the user's movements a
 * Weather information
 * A tool to share results on social media 
 * Images of their route displayed on the main page
+* Logging tool to write down fitness goals
+* A way to connect with other runners or walkers
+
+#### How to Use:
+1. Press the start button on the bottom of the main page to open the map.
+2. Go for a run or walk, the map will track your route automatically.
+3. Press the stop button to save and append latest workout data to the main page.
+4. Press the reset button to delete data from the main page.
+5. Use the filter menu to limit workout data by the number of days. 
+
+#### Link to Website:
+[RunWalk Fitness Tracker](https://conniestandish.github.io/run-walk-tracker/)
 
