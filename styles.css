@@ -1,5 +1,5 @@
 body {
-    font-family: forma-djr-micro, sans-serif;
+    font-family: Arial, sans-serif;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -56,7 +56,7 @@ main {
 }
 
 .reset-btn, .filter {
-    font-family: forma-djr-micro;
+    font-family: Arial, sans-serif;
     font-size: 17px;
     font-weight: 700;
     background-color: #0a3d28;
